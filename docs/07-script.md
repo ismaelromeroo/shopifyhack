@@ -5,8 +5,8 @@ Spoken words only. Staging, delivery notes and reasoning live in
 
 **Generated from `src/lib/slides.ts`.** Do not hand-edit. Also rendered at `/script`.
 
-19 slides · ~5:05 · four voices. Splits fall on act boundaries and never inside an animated build
-(3→4, 9→10, 14→15 each stay with one voice).
+20 slides · ~5:23 · four voices. Splits fall on act boundaries and never inside an animated build
+(3→4, 10→11, 15→16 each stay with one voice).
 
 
 ---
@@ -47,7 +47,7 @@ Spoken words only. Staging, delivery notes and reasoning live in
 
 ---
 
-## Voice 2 — slides 6–10 · 1:20–2:50
+## Voice 2 — slides 6–11 · 1:20–2:50
 
 *Why nobody does it, and the mechanism*
 
@@ -70,29 +70,33 @@ Spoken words only. Staging, delivery notes and reasoning live in
 **8** · `10¢ (live)`
 
 > Exactly the odds.
-> If the Yankees are a one-in-ten shot, it's worth ten cents.
-> Any cheaper and you'd buy every one you could find.
-> Any more and you'd sell them.
-> That's a real market, and that's the real price, right now.
+> A one-in-ten shot costs ten cents.
+> Which means the price of the contract is the price of the promise.
 
-**9** · `20,000 contracts = $2,000`
+**9** · `Kalshi · Polymarket`
+
+> We buy them on Kalshi — a prediction market.
+> Polymarket is the other one.
+> That's the only moving part that lives outside your store.
+
+**10** · `20,000 contracts = $2,000`
 
 > So two thousand dollars buys you twenty thousand of them.
 > Which means twenty thousand dollars shows up — but only if they win it.
 
-**10** *(build)* · `That's exactly when you owe $20,000.`
+**11** *(build)* · `That's exactly when you owe $20,000.`
 
 > And that is exactly when you owe your customers twenty thousand dollars.
 > The money arrives at the same moment the bill does.
 
 ---
 
-## Voice 3 — slides 11–15 · 2:50–4:00
+## Voice 3 — slides 12–16 · 2:50–4:00
 
 *The payoff, the proof, the product*
 
 
-**11** · `the payoff table (the one dense slide)`
+**12** · `the payoff table (the one dense slide)`
 
 > (three full seconds of silence) — then: “Either way: twenty-three twenty-six.
 > Win or lose, the same number.
@@ -100,27 +104,27 @@ Spoken words only. Staging, delivery notes and reasoning live in
 > You are not betting on the Yankees.
 > You are buying certainty about what this promotion costs.”
 
-**12** · `10% off = 1-in-10 free`
+**13** · `10% off = 1-in-10 free`
 
 > Which means the merchant isn't deciding whether to spend the money.
 > He's already spending it.
 > He's deciding what shape it takes.
 
-**13** · `$75M`
+**14** · `$75M`
 
 > Does anyone actually talk about these?
 > At the extreme — a Houston furniture store ran exactly this promise on the World Series and sold seventy-five million dollars of furniture.
 > It made national news twice: when he promised it, and when everyone got paid.
 > Nobody has ever written a headline about ten percent off.
 
-**14** · `Pick an event.`
+**15** · `Pick an event.`
 
 > So here's what we built.
 > Every event that can actually be covered, priced off the live market.
 > Pick one, and you get a single number before you commit — what it costs, and what that is as a plain sale.
 > The ones that can't be covered, it says so.
 
-**15** · `They never place a trade.`
+**16** · `They never place a trade.`
 
 > They click go.
 > They never open an account, never place a trade.
@@ -128,30 +132,30 @@ Spoken words only. Staging, delivery notes and reasoning live in
 
 ---
 
-## Voice 4 — slides 16–19 · 4:00–5:05
+## Voice 4 — slides 17–20 · 4:00–5:05
 
 *The customer, the model, the close*
 
 
-**16** · `the customer's phone`
+**17** · `the customer's phone`
 
 > And the customer gets this.
 > Their order, riding on the Yankees, with live odds.
 > And when it hits — the Yankees won, your order was free.
 > A hundred customers just became a hundred people telling that story.
 
-**17** · `three lines`
+**18** · `three lines`
 
 > We make money the way the exchange does: a management fee on the coverage.
 > Ten percent of the promo budget they were already spending.
 
-**18** · `+5 in 100`
+**19** · `+5 in 100`
 
 > So here's the bet, made precise.
 > With every fee in, this beats the flat sale it replaces if it sells five more orders in a hundred.
 > That's the whole bar.
 > And you don't take it on faith — every campaign runs with a built-in holdout, half the traffic keeps the plain sale, so your first promo measures its own lift against the discount you would have run anyway.
 
-**19** · `closing card`
+**20** · `closing card`
 
 > Covered.

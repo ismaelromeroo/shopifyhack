@@ -16,7 +16,7 @@ import {
   SceneClose,
 } from "./scenes-b";
 
-const LAST = 19;
+const LAST = 20;
 
 /**
  * Slides that share a visual composition share a group; within a group a
@@ -25,9 +25,9 @@ const LAST = 19;
  */
 const GROUP: Record<number, string> = {
   1: "s1", 2: "s2", 3: "s3", 4: "s3", 5: "s5", 6: "s6",
-  7: "s7", 8: "s7", 9: "s7", 10: "s7",
-  11: "s11", 12: "s12", 13: "wom", 14: "console", 15: "console",
-  16: "phone", 17: "lines", 18: "bar", 19: "close",
+  7: "s7", 8: "s7", 9: "s7", 10: "s7", 11: "s7",
+  12: "s11", 13: "s12", 14: "wom", 15: "console", 16: "console",
+  17: "phone", 18: "lines", 19: "bar", 20: "close",
 };
 
 function Scene({ n }: { n: number }) {
@@ -41,7 +41,7 @@ function Scene({ n }: { n: number }) {
     case "s11": return <ScenePayoffTable />;
     case "s12": return <SceneSameSale />;
     case "wom": return <SceneWom />;
-    case "console": return <ConsoleScene n={n as 14 | 15} />;
+    case "console": return <ConsoleScene n={n as 15 | 16} />;
     case "phone": return <PhoneScene />;
     case "lines": return <SceneThreeLines />;
     case "bar": return <SceneBar />;

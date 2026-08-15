@@ -9,8 +9,8 @@
 export interface Slide {
   n: number;
   act: string;
-  /** the plan's slide heading (backtick text). Descriptive titles (slide 11,
-   * 15, 16, 17) are labels for the script, not on-screen text. */
+  /** the plan's slide heading (backtick text). Descriptive titles (slide 12,
+   * 16, 17, 18) are labels for the script, not on-screen text. */
   title: string;
   /** build on the previous slide, not a new one */
   isBuild?: boolean;
@@ -22,15 +22,15 @@ export interface Slide {
   productionNote?: string;
 }
 
-// Acts I–IV keep the plan's timings; V and VI absorb the two slides added
-// on 2026-08-15 (13: $75M, +15s · 18: +5 in 100, +18s).
+// Timings after the 2026-08-15 additions: $75M (now 14), +5 in 100 (now 19),
+// and the venue slide (9, +18s). Total ~5:23 against a 5:00 ceiling — see CUT_ORDER.
 export const ACTS = [
   "Act I — The problem (0:00–0:35)",
   "Act II — The idea (0:35–1:20)",
   "Act III — Why nobody does it (1:20–1:40)",
-  "Act IV — The math, from zero (1:40–3:15)",
-  "Act V — The product (3:15–4:20)",
-  "Act VI — The model (4:20–5:05)",
+  "Act IV — The math, from zero (1:40–3:33)",
+  "Act V — The product (3:33–4:38)",
+  "Act VI — The model (4:38–5:23)",
 ] as const;
 
 export const VOCABULARY_RULE = {
@@ -40,44 +40,44 @@ export const VOCABULARY_RULE = {
   earned: [
     "contract — slide 7",
     "odds / price — slide 8",
-    "hedging — slide 11",
-    "prediction market — slide 11",
+    "prediction market · Kalshi — slide 9",
+    "hedging — slide 12",
   ],
-  why: "A name given before the thing it names is a concept the listener has to hold on credit. A name given after is a label for something they already understand, and it lands as recognition — which is why “that is what hedging is” belongs at slide 11, once the payoff table has shown both branches costing the same, and not at slide 7 where it would be a prerequisite. Said in the right order, the jargon is a service to the viewer; said early, it is a tax.",
+  why: "A name given before the thing it names is a concept the listener has to hold on credit. A name given after is a label for something they already understand, and it lands as recognition — which is why “that is what hedging is” belongs at slide 12, once the payoff table has shown both branches costing the same, and not at slide 7 where it would be a prerequisite. By the same rule the venue is named at slide 9 — after the contract has been seen and priced, not before. Said in the right order, the jargon is a service to the viewer; said early, it is a tax.",
   exception:
     "One term stays out entirely: expected value. Not because it is too advanced, but because slide 5 already gives the same idea in counts — ten orders out of a hundred — and counts are easier to follow aloud than a term of art that means exactly the same thing.",
 };
 
 /**
  * Who speaks what. Splits fall on act boundaries and never inside an animated
- * build (3→4, 9→10, 14→15) — a voice change mid-composition reads as an edit
- * error. Voice 2 deliberately holds 7–10 whole: that is the contract sequence
+ * build (3→4, 10→11, 15→16) — a voice change mid-composition reads as an edit
+ * error. Voice 2 deliberately holds 7–11 whole: that is the contract sequence
  * and the spine of the argument.
  */
 export const VOICES = [
   { n: 1, from: 1, to: 5, time: "0:00–1:20", covers: "The problem and the idea" },
-  { n: 2, from: 6, to: 10, time: "1:20–2:50", covers: "Why nobody does it, and the mechanism" },
-  { n: 3, from: 11, to: 15, time: "2:50–4:00", covers: "The payoff, the proof, the product" },
-  { n: 4, from: 16, to: 19, time: "4:00–5:05", covers: "The customer, the model, the close" },
+  { n: 2, from: 6, to: 11, time: "1:20–2:50", covers: "Why nobody does it, and the mechanism" },
+  { n: 3, from: 12, to: 16, time: "2:50–4:00", covers: "The payoff, the proof, the product" },
+  { n: 4, from: 17, to: 20, time: "4:00–5:05", covers: "The customer, the model, the close" },
 ] as const;
 
 export const CUT_ORDER = [
   "Slide 5 (`It's the same discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.",
   "Slide 2 — fold into Slide 1.",
-  "Slide 9 — merge into Slide 10 as a build.",
-  "Do not cut 7, 8, 10 or 11. Those four are the argument.",
+  "Slide 10 — merge into Slide 11 as a build.",
+  "Do not cut 7, 8, 11 or 12. Those four are the argument.",
 ];
 
 export const BUILD_NOTES = [
-  "One Kalshi feed serves everything live: the slide-8 price stamp, the console menu and quote (14–15), and the embedded claim ticket (16). Read API, no auth, ~10s interval, last-updated timestamp visible. If the fetch fails, fall back to the frozen snapshot and drop the `live` tag rather than showing a stale number as current.",
-  "Slides 3→4, 9→10 and 14→15 are builds, not new slides. The objects must persist and animate so the eye tracks continuity.",
-  "One number per slide, except 11 and 17.",
+  "One Kalshi feed serves everything live: the slide-8 price stamp, the console menu and quote (15–16), and the embedded claim ticket (17). Read API, no auth, ~10s interval, last-updated timestamp visible. If the fetch fails, fall back to the frozen snapshot and drop the `live` tag rather than showing a stale number as current.",
+  "Slides 3→4, 10→11 and 15→16 are builds, not new slides. The objects must persist and animate so the eye tracks continuity.",
+  "One number per slide, except 12 and 18.",
   "Type scale: the number is the slide. Headlines are labels at roughly a quarter the size.",
-  "Total narration is ~680 words after the 2026-08-15 additions, which lands around 5:05 spoken with the pauses held. The cut order buys back ~35s if the runtime matters.",
+  "Total narration is ~735 words after the venue slide, landing around 5:23 spoken with the pauses held — OVER the 5:00 ceiling. The cut order buys back ~35s, which is enough; take slide 2 first, not slide 5.",
 ];
 
 const MARKET_NOTE =
-  "Live-market reality check (2026-08-15): the make-the-playoffs market (KXMLBPLAYOFFS-26-NYY) trades at ~97¢ — the Yankees are near-locks — which breaks the deck's arithmetic (20,000 coupons × 10¢ = $2,000). The Yankees–World-Series market (KXMLB-26-NYY) trades at ~10.5¢, exactly the one-in-ten shot the deck needs. The deck therefore shows the World Series market, and its coupon reads “…if the Yankees win the World Series.” When recording, speak “win the World Series” in place of “make the playoffs” here; every number in the deck then matches the live screen.";
+  "Live-market reality check (2026-08-15): the make-the-playoffs market (KXMLBPLAYOFFS-26-NYY) trades at ~97¢ — the Yankees are near-locks — which breaks the deck's arithmetic (20,000 contracts × 10¢ = $2,000). The Yankees–World-Series market (KXMLB-26-NYY) trades at ~10.5¢, exactly the one-in-ten shot the deck needs. The deck therefore shows the World Series market, and its contract reads “…if the Yankees win the World Series.” When recording, speak “win the World Series” in place of “make the playoffs” here; every number in the deck then matches the live screen.";
 
 export const SLIDES: Slide[] = [
   {
@@ -165,12 +165,25 @@ export const SLIDES: Slide[] = [
       "The coupon with a price stamped on it, pulled live from Kalshi, with a small “live · updated 2s ago” tag and the real ticker.",
     ],
     narration:
-      "Exactly the odds. If the Yankees are a one-in-ten shot, it's worth ten cents. Any cheaper and you'd buy every one you could find. Any more and you'd sell them. That's a real market, and that's the real price, right now.",
+      "Exactly the odds. A one-in-ten shot costs ten cents. Which means the price of the contract is the price of the promise.",
     delivery:
       "This is where you lose people or don't. It is the only genuine conceptual leap in the deck. It works out loud because the arbitrage argument (any cheaper and you'd buy every one) is checkable against ordinary haggling intuition and requires no finance. Do not rush it. Let the live price sit on screen while you say it.",
   },
   {
     n: 9,
+    act: ACTS[3],
+    title: "Kalshi · Polymarket",
+    onScreen: [
+      "The same contract from 7–8, shrunk to make room. Beneath it the two venue names, Kalshi weighted heavier because it is where the live price comes from.",
+    ],
+    narration:
+      "We buy them on Kalshi — a prediction market. Polymarket is the other one. That's the only moving part that lives outside your store.",
+    delivery:
+      "Name the venue, do not explain the institution. The viewer does not need to know what a prediction market is, how it clears, or why the price is efficient — only where we buy the contracts and that it is one outside dependency. Anything more is a lecture the pitch does not need.",
+    notOnScreen: ["Logos, volume figures, a regulatory explainer."],
+  },
+  {
+    n: 10,
     act: ACTS[3],
     title: "20,000 contracts = $2,000",
     onScreen: ["The single coupon multiplies into a block; $2,000 beneath."],
@@ -178,7 +191,7 @@ export const SLIDES: Slide[] = [
       "So two thousand dollars buys you twenty thousand of them. Which means twenty thousand dollars shows up — but only if they win it.",
   },
   {
-    n: 10,
+    n: 11,
     act: ACTS[3],
     title: "That's exactly when you owe $20,000.",
     isBuild: true,
@@ -191,7 +204,7 @@ export const SLIDES: Slide[] = [
       "The load-bearing sentence of the entire deck. If a listener retains one line, it is “the money arrives at the same moment the bill does.” Make it the slowest sentence in the recording. Everything before it is setup; everything after it is bookkeeping.",
   },
   {
-    n: 11,
+    n: 12,
     act: ACTS[3],
     title: "the payoff table (the one dense slide)",
     onScreen: [
@@ -206,7 +219,7 @@ export const SLIDES: Slide[] = [
       "Per Victor's review 2026-08-15: the table now carries a fifth row — Our fee, −$200 — and labels the bottom line “Total cost of the promo,” so both totals read −$2,326. When recording, speak “twenty-three twenty-six” in place of the plan's “twenty-one twenty-six.”",
   },
   {
-    n: 12,
+    n: 13,
     act: ACTS[3],
     title: "10% off = 1-in-10 free",
     onScreen: [
@@ -217,7 +230,7 @@ export const SLIDES: Slide[] = [
       "Per Victor's review 2026-08-15: the deck no longer advertises the premium here. On screen it now reads “10% off = 1-in-10 free” — reiterating that this is the same discount, reshaped — while the narration line stays as written.",
   },
   {
-    n: 13,
+    n: 14,
     act: ACTS[4],
     title: "$75M",
     onScreen: [
@@ -232,7 +245,7 @@ export const SLIDES: Slide[] = [
       "Added 2026-08-15 per Victor's direction to quantify the word-of-mouth value. Not in the original 17-slide plan; adds ~15s — the cut order still applies if the runtime matters.",
   },
   {
-    n: 14,
+    n: 15,
     act: ACTS[4],
     title: "Pick an event.",
     onScreen: [
@@ -246,7 +259,7 @@ export const SLIDES: Slide[] = [
       "Per Victor's review 2026-08-15: the demo is a MENU of runnable events, not plaintext entry. The console shows the product's real market picker (via /api/markets) — each row priced by walking its live book, thin books refused with the reason (including the 97¢ make-the-playoffs market: “book too thin for this size”) — and the highlight lands on the Yankees–World-Series row. Narration corrected 2026-08-15: the plan's “types the promo in plain English” described a product that was never built, and narrating it over a menu would have been visibly false.",
   },
   {
-    n: 15,
+    n: 16,
     act: ACTS[4],
     title: "They never place a trade.",
     onScreen: [
@@ -258,7 +271,7 @@ export const SLIDES: Slide[] = [
       "Note the word choice: coupons, not position. Slide 7's object is still doing work eight slides later.",
   },
   {
-    n: 16,
+    n: 17,
     act: ACTS[4],
     title: "the customer's phone",
     onScreen: [
@@ -272,7 +285,7 @@ export const SLIDES: Slide[] = [
       "The phone embeds the real product page — /claim/1042, then the /claim/1042?settle=won deep-link for the settlement beat — so the deck shows exactly the UI a customer gets. Closing narration sentence added 2026-08-15 per Victor's direction to stress the word-of-mouth value at the customer moment.",
   },
   {
-    n: 17,
+    n: 18,
     act: ACTS[5],
     title: "three lines",
     onScreen: ["Promo budget $2,000 · Exchange fee $126 · Our fee $200 (bold)."],
@@ -281,7 +294,7 @@ export const SLIDES: Slide[] = [
     notOnScreen: ["ARR projections, TAM, a market-size chart."],
   },
   {
-    n: 18,
+    n: 19,
     act: ACTS[5],
     title: "+5 in 100",
     onScreen: [
@@ -296,7 +309,7 @@ export const SLIDES: Slide[] = [
       "Added 2026-08-15 per Victor's direction to put the lift calculation in the deck. Not in the original 17-slide plan; adds ~18s.",
   },
   {
-    n: 19,
+    n: 20,
     act: ACTS[5],
     title: "closing card",
     onScreen: [
