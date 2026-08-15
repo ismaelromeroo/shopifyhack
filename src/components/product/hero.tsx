@@ -1,6 +1,8 @@
 "use client";
 
 import { type ReactNode } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE } from "@/components/deck/primitives";
 
@@ -74,6 +76,16 @@ export function Hero() {
 
           <SnapIn className="mt-5" delay={rm ? 0 : 0.42}>
             <p className="caps-label text-g500">how a promo gets a price.</p>
+          </SnapIn>
+
+          <SnapIn className="mt-10" delay={rm ? 0 : 0.56}>
+            <Link
+              href="/product/console"
+              className="inline-flex h-11 items-center gap-2.5 rounded-ctl bg-ink px-5 text-body font-semibold text-surface shadow-raised transition-transform active:scale-[0.98]"
+            >
+              Price a promo
+              <ArrowRight size={15} strokeWidth={2.5} />
+            </Link>
           </SnapIn>
         </div>
       </div>

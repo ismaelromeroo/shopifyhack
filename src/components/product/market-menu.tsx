@@ -1,35 +1,110 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
-import { Minus, Plus } from "lucide-react";
-import { Panel, PanelLabel } from "@/components/chrome";
-import { EASE, useStages } from "@/components/deck/primitives";
-import { contracts, fmtInt, pmToCentsLabel, oneInLabel } from "@/lib/format";
+import { useEffect, useState } from "react";
+import { contracts, fmtInt, oneInLabel, pmToCentsLabel } from "@/lib/format";
 import type { MarketCandidate, MarketsPayload } from "@/lib/payload";
 
-export function ProductMarketMenu({
-  orders,
-  aov,
-  setOrders,
-  setAov,
-  selectedTicker,
-  onSelect,
-}: {
-  orders: number;
-  aov: number;
-  setOrders: (n: number) => void;
-  setAov: (n: number) => void;
-  selectedTicker: string | null;
-  onSelect: (c: MarketCandidate) => void;
-}) {
-  const reduced = useReducedMotion();
-  const [data, setData] = useState<MarketsPayload | null>(null);
-  const [expandedState, setExpandedState] = useState<boolean | null>(null);
-  const [walking, setWalking] = useState(true);
-  const picked = useRef(false);
-  const expanded = expandedState ?? selectedTicker == null;
-  const selection = data?.candidates.find((c) => c.ticker === selectedTicker) ?? null;
+const ROW_PREFERENCE = [
+  "KXMLB-26-NYY",
+  "KXMLBPLAYOFFS-26-NYY",
+  "KXMLB-26-LAD",
+  "KXMLB-26-BOS",
+];
 
+const FALLBACK: MarketCandidate[] = [
+  {
+    ticker: "KXMLB-26-NYY",
+    team: { code: "NYY", city: "New York", nickname: "Yankees" },
+    trigger: "world_series",
+    label: "the Yankees win the World Series",
+    sentence: "Free if the Yankees win the World Series",
+    local: true,
+    midPm: 1050,
+    askPm: 1070,
+    spreadPm: 40,
+    depthC100: 147_869_456,
+    canCover: true,
+    reason: "ok",
+    nearCertainty: false,
+    effectiveBps: 1263,
+    live: false,
+  },
+  {
+    ticker: "KXMLBPLAYOFFS-26-NYY",
+    team: { code: "NYY", city: "New York", nickname: "Yankees" },
+    trigger: "playoffs",
+    label: "the Yankees make the playoffs",
+    sentence: "Free if the Yankees make the playoffs",
+    local: true,
+    midPm: 9700,
+    askPm: 9800,
+    spreadPm: 200,
+    depthC100: 140_209,
+    canCover: false,
+    reason: "insufficient_depth",
+    nearCertainty: true,
+    effectiveBps: null,
+    live: false,
+  },
+  {
+    ticker: "KXMLB-26-LAD",
+    team: { code: "LAD", city: "Los Angeles", nickname: "Dodgers" },
+    trigger: "world_series",
+    label: "the Dodgers win the World Series",
+    sentence: "Free if the Dodgers win the World Series",
+    local: false,
+    midPm: 3625,
+    askPm: 3700,
+    spreadPm: 150,
+    depthC100: 98_000_000,
+    canCover: true,
+    reason: "ok",
+    nearCertainty: false,
+    effectiveBps: 4201,
+    live: false,
+  },
+  {
+    ticker: "KXMLB-26-BOS",
+    team: { code: "BOS", city: "Boston", nickname: "Red Sox" },
+    trigger: "world_series",
+    label: "the Red Sox win the World Series",
+    sentence: "Free if the Red Sox win the World Series",
+    local: false,
+    midPm: 525,
+    askPm: 550,
+    spreadPm: 50,
+    depthC100: 120_000_000,
+    canCover: true,
+    reason: "ok",
+    nearCertainty: false,
+    effectiveBps: 684,
+    live: false,
+  },
+];
+
+function pickRows(candidates: MarketCandidate[]): MarketCandidate[] {
+  const byTicker = new Map(candidates.map((c) => [c.ticker, c]));
+  const preferred = ROW_PREFERENCE.map((t) => byTicker.get(t)).filter(
+    (c): c is MarketCandidate => !!c
+  );
+  const rest = candidates.filter((c) => !ROW_PREFERENCE.includes(c.ticker));
+  return [...preferred, ...rest].slice(0, 4);
+}
+
+function reasonLabel(reason: string): string {
+  switch (reason) {
+    case "insufficient_depth":
+      return "book too thin for this size";
+    case "spread_too_wide":
+      return "spread too wide";
+    case "position_limit":
+      return "over position limit";
+    default:
+      return "no two-sided quote";
+  }
+}
+
+export function useProductMarkets(orders: number, aov: number) {
+  const [rows, setRows] = useState<MarketCandidate[]>(FALLBACK);
   useEffect(() => {
     let stop = false;
     (async () => {
@@ -37,313 +112,76 @@ export function ProductMarketMenu({
         const res = await fetch(`/api/product/markets?orders=${orders}&aov=${aov}`, {
           cache: "no-store",
         });
-        const json = (await res.json()) as MarketsPayload;
-        if (!stop && json.ok) setData(json);
+        const json = (await res.json()) as MarketsPayload | { ok: false };
+        if (!stop && json.ok) setRows(pickRows(json.candidates));
       } catch {
-        /* keep previous menu */
+        /* keep fallback */
       }
     })();
     return () => {
       stop = true;
     };
   }, [orders, aov]);
-
-  const local = data?.candidates.filter((c) => c.local) ?? [];
-  const elsewhere = data?.candidates.filter((c) => !c.local) ?? [];
-  const flat = [...local, ...elsewhere];
-  const targetIdx = Math.max(
-    0,
-    flat.findIndex((c) => c.ticker === "KXMLB-26-NYY")
-  );
-  const browseOrder = [
-    ...flat.map((_, i) => i).filter((i) => i !== targetIdx).slice(0, 3),
-    targetIdx,
-  ];
-  const ready = !!data && walking && !picked.current;
-  const timed = useStages(
-    ready && !reduced ? [1200, 1650, 2100, 2550, 3150] : [],
-    ready
-  );
-  const stage = reduced && ready ? 5 : timed;
-  const highlightIdx =
-    walking && stage >= 1 && stage <= 4
-      ? browseOrder[Math.min(stage - 1, browseOrder.length - 1)] ?? -1
-      : -1;
-
-  const onSelectRef = useRef(onSelect);
-  onSelectRef.current = onSelect;
-
-  useEffect(() => {
-    if (!data || picked.current) return;
-    if (!(reduced || stage >= 5)) return;
-    const list = [
-      ...data.candidates.filter((c) => c.local),
-      ...data.candidates.filter((c) => !c.local),
-    ];
-    const target =
-      list.find((c) => c.ticker === "KXMLB-26-NYY" && c.canCover) ??
-      list.find((c) => c.canCover) ??
-      list[0];
-    if (!target) return;
-    picked.current = true;
-    const t = window.setTimeout(() => {
-      onSelectRef.current(target);
-      setExpandedState(false);
-      setWalking(false);
-    }, 0);
-    return () => window.clearTimeout(t);
-  }, [data, reduced, stage]);
-
-  const pick = (c: MarketCandidate) => {
-    picked.current = true;
-    setWalking(false);
-    onSelect(c);
-    setExpandedState(false);
-  };
-
-  return (
-    <Panel className="p-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <PanelLabel>Promotion</PanelLabel>
-          <p className="mt-1 text-title font-medium">
-            A chance every order is free — pick what it rides on.
-          </p>
-        </div>
-        <div className="flex items-center gap-4 text-caption text-g600">
-          <Stepper value={orders} onChange={setOrders} step={25} min={25} max={5000} label="orders" />
-          <span className="text-g300">×</span>
-          <Stepper value={aov} onChange={setAov} step={25} min={25} max={2000} label="avg order" money />
-        </div>
-      </div>
-
-      {!data && (
-        <div className="mt-5 py-8 text-center text-caption text-g400">
-          walking the books for your size…
-        </div>
-      )}
-
-      {data && !expanded && selection && (
-        <div className="mt-4">
-          <CandidateRow
-            c={selection}
-            selected
-            onPick={() => {}}
-            reduced={!!reduced}
-            neededC100={data.neededC100}
-          />
-          <button
-            onClick={() => setExpandedState(true)}
-            className="mt-3 rounded-ctl border border-ink/[0.1] px-3 py-1.5 text-caption font-medium text-g700 transition-colors hover:bg-g100"
-          >
-            Change market
-          </button>
-        </div>
-      )}
-
-      {data && (expanded || !selection) && (
-        <div className="mt-5 space-y-4">
-          <MenuGroup
-            title="Near your store — New York"
-            rows={local}
-            selection={selection}
-            reduced={!!reduced}
-            neededC100={data.neededC100}
-            highlightedTicker={
-              highlightIdx >= 0 ? flat[highlightIdx]?.ticker ?? null : null
-            }
-            onPick={pick}
-          />
-          <MenuGroup
-            title="Deep books elsewhere"
-            rows={elsewhere}
-            selection={selection}
-            reduced={!!reduced}
-            neededC100={data.neededC100}
-            highlightedTicker={
-              highlightIdx >= 0 ? flat[highlightIdx]?.ticker ?? null : null
-            }
-            onPick={pick}
-          />
-          <p className="border-t border-ink/[0.06] pt-3 text-caption text-g400">
-            Each option is priced by walking its live order book against your{" "}
-            {fmtInt(orders)} × ${aov} campaign — thin books say so.
-          </p>
-        </div>
-      )}
-    </Panel>
-  );
+  return rows;
 }
 
-function MenuGroup({
-  title,
-  rows,
-  selection,
-  onPick,
-  reduced,
-  neededC100,
-  highlightedTicker,
-}: {
-  title: string;
-  rows: MarketCandidate[];
-  selection: MarketCandidate | null;
-  onPick: (c: MarketCandidate) => void;
-  reduced: boolean;
-  neededC100: number;
-  highlightedTicker: string | null;
-}) {
-  if (rows.length === 0) return null;
-  return (
-    <div>
-      <div className="caps-label text-g400">{title}</div>
-      <div className="mt-2 space-y-1.5">
-        {rows.map((c, i) => (
-          <CandidateRow
-            key={c.ticker}
-            c={c}
-            selected={selection?.ticker === c.ticker}
-            highlighted={highlightedTicker === c.ticker}
-            onPick={() => onPick(c)}
-            reduced={reduced}
-            neededC100={neededC100}
-            delay={0.25 + i * 0.12}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function CandidateRow({
-  c,
+export function MarketRow({
+  row,
   selected,
-  highlighted,
+  dimmed,
   onPick,
-  reduced,
-  neededC100,
-  delay,
 }: {
-  c: MarketCandidate;
+  row: MarketCandidate;
   selected: boolean;
-  highlighted?: boolean;
+  dimmed?: boolean;
   onPick: () => void;
-  reduced: boolean;
-  neededC100: number;
-  delay?: number;
 }) {
   return (
-    <motion.button
+    <button
+      type="button"
       onClick={onPick}
-      initial={reduced ? false : { y: 6 }}
-      animate={{ y: 0 }}
-      transition={{ delay: delay ?? 0, duration: 0.45, ease: EASE }}
-      whileTap={reduced ? undefined : { scale: 0.995 }}
-      className={`relative flex w-full items-center justify-between gap-4 rounded-ctl border px-3.5 py-3 text-left transition-colors ${
-        selected
-          ? "border-ink bg-ink/[0.03]"
-          : c.canCover
-            ? "border-ink/[0.08] hover:bg-g100"
-            : "border-dashed border-g300 hover:bg-g100"
-      }`}
+      className={`relative flex w-full items-center justify-between gap-3 rounded-ctl border px-3.5 py-2.5 text-left ${
+        selected ? "border-ink" : "border-ink/10"
+      } ${dimmed ? "opacity-40" : ""}`}
     >
-      {highlighted && !selected && (
-        <motion.div
-          layoutId="console-menu-hl"
-          transition={{ duration: 0.35, ease: EASE }}
-          className="absolute inset-0 rounded-ctl bg-g150"
-        />
-      )}
-      <span className="relative flex min-w-0 items-center gap-3">
+      <span className="flex min-w-0 items-center gap-3">
         <span
           className={`h-2 w-2 shrink-0 rounded-full ${
             selected ? "bg-ink" : "border border-g400"
           }`}
         />
         <span className="min-w-0">
-          <span className={`block truncate text-body font-medium ${c.canCover ? "" : "text-g500"}`}>
-            {c.label}
+          <span
+            className={`block truncate font-sans text-body font-medium tracking-tight ${
+              row.canCover ? "text-ink" : "text-g500"
+            }`}
+          >
+            {row.label}
           </span>
-          <span className="mt-0.5 block text-caption text-g500 tnum">
-            {c.midPm != null
-              ? `${pmToCentsLabel(c.midPm)} · ${oneInLabel(c.midPm) ?? ""}`
+          <span className="tnum block text-caption text-g500">
+            {row.midPm != null
+              ? `${pmToCentsLabel(row.midPm)} · ${oneInLabel(row.midPm) ?? ""}`
               : "no live quote"}
-            {" · "}
-            {c.ticker}
           </span>
         </span>
       </span>
-      <span className="relative shrink-0 text-right">
-        {c.canCover && c.effectiveBps != null ? (
+      <span className="tnum shrink-0 text-right">
+        {row.canCover && row.effectiveBps != null ? (
           <>
-            <span className="block text-body font-semibold tnum">
-              {(c.effectiveBps / 100).toFixed(1)}% all-in
+            <span className="block font-sans text-body font-semibold">
+              {(row.effectiveBps / 100).toFixed(1)}% all-in
             </span>
-            <span className="block text-caption text-g500 tnum">
-              {fmtInt(contracts(c.depthC100))} resting
+            <span className="block text-caption text-g500">
+              {fmtInt(contracts(row.depthC100))} resting
             </span>
           </>
         ) : (
-          <>
-            <span className="block text-caption font-medium text-g500">
-              {c.reason === "insufficient_depth"
-                ? "book too thin for your size"
-                : c.reason === "spread_too_wide"
-                  ? "spread too wide"
-                  : c.reason === "position_limit"
-                    ? "over position limit"
-                    : "no two-sided quote"}
-            </span>
-            <span className="block text-caption text-g400 tnum">
-              {c.reason === "insufficient_depth"
-                ? `${fmtInt(contracts(c.depthC100))} of ${fmtInt(contracts(neededC100))} needed`
-                : c.spreadPm != null
-                  ? `${pmToCentsLabel(c.spreadPm)} spread`
-                  : ""}
-            </span>
-          </>
+          <span className="block text-caption font-medium text-g500">
+            {reasonLabel(row.reason)}
+          </span>
         )}
       </span>
-    </motion.button>
-  );
-}
-
-function Stepper({
-  value,
-  onChange,
-  step,
-  min,
-  max,
-  label,
-  money = false,
-}: {
-  value: number;
-  onChange: (n: number) => void;
-  step: number;
-  min: number;
-  max: number;
-  label: string;
-  money?: boolean;
-}) {
-  return (
-    <span className="inline-flex items-center gap-1.5">
-      <button
-        aria-label={`decrease ${label}`}
-        onClick={() => onChange(Math.max(min, value - step))}
-        className="flex h-5 w-5 items-center justify-center rounded-[4px] border border-ink/[0.1] text-g500 transition-colors hover:bg-g100"
-      >
-        <Minus size={10} strokeWidth={2.5} />
-      </button>
-      <span className="min-w-[3.5em] text-center font-medium text-ink tnum">
-        {money ? `$${value}` : value.toLocaleString()}
-      </span>
-      <button
-        aria-label={`increase ${label}`}
-        onClick={() => onChange(Math.min(max, value + step))}
-        className="flex h-5 w-5 items-center justify-center rounded-[4px] border border-ink/[0.1] text-g500 transition-colors hover:bg-g100"
-      >
-        <Plus size={10} strokeWidth={2.5} />
-      </button>
-      <span className="text-g500">{label}</span>
-    </span>
+      {selected && <span className="relative font-sans text-body text-ink">✓</span>}
+    </button>
   );
 }

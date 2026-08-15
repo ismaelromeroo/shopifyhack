@@ -1,26 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { fmtMoney } from "@/lib/format";
+
+const STEPS = 20;
 
 export function OrdersChart({
   running,
   ordersTarget = 100,
   aov = 200,
+  onDone,
 }: {
   running: boolean;
   ordersTarget?: number;
   aov?: number;
+  onDone?: () => void;
 }) {
   const rm = useReducedMotion();
   const [rawStep, setRawStep] = useState(0);
-  const STEPS = 20;
+  const doneRef = useRef(false);
   const perStep = ordersTarget / STEPS;
   const maxLiability = ordersTarget * aov;
 
   useEffect(() => {
-    if (!running || rm) return;
+    if (!running) return;
+    if (rm) {
+      setRawStep(STEPS);
+      return;
+    }
     const t = setInterval(() => {
       setRawStep((n) => {
         if (n >= STEPS) {
@@ -34,11 +42,23 @@ export function OrdersChart({
   }, [running, rm]);
 
   const step = rm && running ? STEPS : rawStep;
+  const done = step >= STEPS;
+
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
+
+  useEffect(() => {
+    if (!done || doneRef.current) return;
+    doneRef.current = true;
+    onDoneRef.current?.();
+  }, [done]);
+
   const orders = Math.round(step * perStep);
   const owedDollars = orders * aov;
   const coveredDollars =
-    step >= STEPS ? owedDollars : Math.max(0, Math.round((step - 1) * perStep) * aov);
-  const done = step >= STEPS;
+    step >= STEPS
+      ? owedDollars
+      : Math.max(0, Math.round((step - 1) * perStep) * aov);
 
   const W = 100;
   const H = 40;

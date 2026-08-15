@@ -46,15 +46,19 @@ export function getCampaign(cid: string): Campaign | undefined {
   return campaigns.get(cid);
 }
 
-/** Simulated next order: add one AOV of liability and cover it immediately. */
-export function tickCampaign(cid: string): Campaign | { error: string } {
+/** Simulated orders: add `n` AOVs of liability and cover them. */
+export function tickCampaign(cid: string, n = 1): Campaign | { error: string } {
   const c = campaigns.get(cid);
   if (!c) return { error: "not_found" };
   if (c.status !== "live") return { error: "settled" };
   if (c.orderCount >= c.ordersTarget) return { error: "complete" };
-  c.orderCount += 1;
-  c.liabilityCents += c.aovCents;
-  c.coverageCents = c.liabilityCents;
+  const left = c.ordersTarget - c.orderCount;
+  const steps = Math.min(Math.max(1, n), left);
+  for (let i = 0; i < steps; i++) {
+    c.orderCount += 1;
+    c.liabilityCents += c.aovCents;
+    c.coverageCents = c.liabilityCents;
+  }
   return c;
 }
 
