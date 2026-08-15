@@ -57,10 +57,11 @@ and an argument a listener can check against their own intuition (Slide 8).
 - **Narration:** *"Here's the part that surprised us. Those two cost the same. A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story."*
 - **Not on screen:** the phrase "expected value," any formula.
 
-### Slide 5 — `Yes — it's a discount.`
+### Slide 5 — `It's the same discount.`
 - **On screen:** the sentence alone, centred.
-- **Narration:** *"So yes, this is a discount. That's the point. It costs what your sale costs. The difference is that people talk about this one."*
+- **Narration:** *"That's the objection everyone's about to have, so let's not dodge it. And it's exactly the point — nobody has ever repeated a ten-percent-off sale. Somebody repeats this one."*
 - **Why it's here:** pre-empting the obvious objection is worth more than defending it later, and in a video there is no later.
+- **Delivery:** the narration must **not restate the sentence on screen.** The screen makes the claim; the voice names it as *the objection* and supplies the differentiator the screen can't show. Narration that duplicates visible text measurably hurts comprehension rather than reinforcing it.
 
 ---
 
@@ -78,9 +79,9 @@ and an argument a listener can check against their own intuition (Slide 8).
 *Six slides that build the mechanism one step at a time. No prior knowledge of markets, hedging or
 finance. Each slide introduces exactly one new idea.*
 
-### Slide 7 — `A coupon worth $1 if the Yankees make the playoffs.`
+### Slide 7 — `A coupon worth $1 if the Yankees win the World Series.`
 - **On screen:** a single drawn coupon object. Nothing else.
-- **Narration:** *"Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees make the playoffs, and nothing if they don't. What should that coupon cost?"*
+- **Narration:** *"Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should that coupon cost?"*
 
 ### Slide 8 — `10¢`  *(live)*
 - **On screen:** the coupon with a price stamped on it, pulled **live from Kalshi**, with a small `live · updated 2s ago` tag and the real ticker.
@@ -110,9 +111,10 @@ finance. Each slide introduces exactly one new idea.*
 
 ## Act V — The product (3:15–4:05)
 
-### Slide 13 — `Type it in English.`
-- **On screen:** screen recording of the merchant console — the promo typed, the real ticker resolving, the live book, the all-in quote.
-- **Narration:** *"So here's what we built. The merchant types the promo in plain English. We find the market, check it's deep enough to actually cover them, and quote one number before they commit."*
+### Slide 13 — `Pick an event.`
+- **On screen:** screen recording of the merchant console — the live market picker, each row priced off its own book, thin books refused inline with the reason, then the all-in quote on the selected row.
+- **Narration:** *"So here's what we built. Every event that can actually be covered, priced off the live market. Pick one, and you get a single number before you commit — what it costs, and what that is as a plain sale. The ones that can't be covered, it says so."*
+- **Delivery:** the narration must match **the picker, not a text box.** The refusals are visible on screen as rows price, so the last clause describes something the viewer can see rather than a claim they have to take on trust.
 
 ### Slide 14 — `They never see a contract.`
 - **On screen:** continuation — click go, orders arrive, the liability and coverage lines tracking each other.
@@ -146,7 +148,7 @@ finance. Each slide introduces exactly one new idea.*
 
 ## Cut order if it runs long
 
-1. **Slide 5** (`Yes — it's a discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.
+1. **Slide 5** (`It's the same discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.
 2. **Slide 2** — fold into Slide 1.
 3. **Slide 9** — merge into Slide 10 as a build.
 

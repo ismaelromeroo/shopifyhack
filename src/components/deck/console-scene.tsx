@@ -296,7 +296,9 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
   return (
     <div className="absolute inset-0">
       <div className="flex h-full items-center justify-center">
-        <div
+        <motion.div
+          layout
+          transition={{ duration: 0.55, ease: EASE }}
           className="w-[78vmin] max-w-[92vw] rounded-card border border-ink/10 bg-surface"
           style={{ boxShadow: "var(--shadow-raised)" }}
         >
@@ -320,26 +322,30 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
             </div>
 
             <div className="mt-[1.6vmin] flex flex-col gap-[0.9vmin]">
-              {rows.map((row, i) => (
-                <motion.div
-                  key={row.ticker}
-                  initial={
-                    startedOn13 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
-                  }
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: EASE }}
-                >
-                  <MenuRowView
-                    row={row}
-                    highlighted={highlightIdx === i}
-                    selected={selected && i === 0}
-                    dimmed={selected && i !== 0}
-                  />
-                </motion.div>
-              ))}
+              <AnimatePresence initial={false}>
+                {(go ? rows.slice(0, 1) : rows).map((row, i) => (
+                  <motion.div
+                    key={row.ticker}
+                    layout
+                    initial={
+                      startedOn13 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
+                    }
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, transition: { duration: 0.25 } }}
+                    transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: EASE }}
+                  >
+                    <MenuRowView
+                      row={row}
+                      highlighted={highlightIdx === i}
+                      selected={selected && i === 0}
+                      dimmed={selected && i !== 0 && !go}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
 
-            {stage >= 6 && (
+            {!go && stage >= 6 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -352,7 +358,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
               </motion.div>
             )}
 
-            {stage >= 7 && (
+            {!go && stage >= 7 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -374,6 +380,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
 
             {stage >= 8 && (
               <motion.div
+                layout
                 initial={rm ? { opacity: 0 } : { opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: EASE }}
@@ -407,7 +414,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
 
             {go && <OrdersChart running={go} />}
           </div>
-        </div>
+        </motion.div>
       </div>
       <SlideLabel>
         {n === 13 ? "Pick an event." : "They never see a contract."}

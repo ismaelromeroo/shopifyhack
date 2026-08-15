@@ -48,7 +48,7 @@ export const VOCABULARY_RULE = {
 };
 
 export const CUT_ORDER = [
-  "Slide 5 (`Yes — it's a discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.",
+  "Slide 5 (`It's the same discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.",
   "Slide 2 — fold into Slide 1.",
   "Slide 9 — merge into Slide 10 as a build.",
   "Do not cut 7, 8, 10 or 11. Those four are the argument.",
@@ -119,11 +119,11 @@ export const SLIDES: Slide[] = [
     title: "It's the same discount.",
     onScreen: ["The sentence alone, centred."],
     narration:
-      "So yes, this is a discount. That's the point. It costs what your sale costs. The difference is that people talk about this one.",
+      "That's the objection everyone's about to have, so let's not dodge it. And it's exactly the point — nobody has ever repeated a ten-percent-off sale. Somebody repeats this one.",
     delivery:
-      "Why it's here: pre-empting the obvious objection is worth more than defending it later, and in a video there is no later.",
+      "Why it's here: pre-empting the obvious objection is worth more than defending it later, and in a video there is no later. The narration must NOT restate the on-screen sentence — the screen makes the claim, the voice names it as the objection and supplies the differentiator the screen cannot show.",
     productionNote:
-      "On-screen sentence updated from the plan's “Yes — it's a discount.” to “It's the same discount.” per Victor's review, 2026-08-15.",
+      "On-screen sentence updated from the plan's “Yes — it's a discount.” to “It's the same discount.” per Victor's review, 2026-08-15. Narration rewritten 2026-08-15 to stop speaking the on-screen words (redundancy effect: narration duplicating visible text measurably hurts comprehension).",
   },
   {
     n: 6,
@@ -137,10 +137,10 @@ export const SLIDES: Slide[] = [
   {
     n: 7,
     act: ACTS[3],
-    title: "A coupon worth $1 if the Yankees make the playoffs.",
+    title: "A coupon worth $1 if the Yankees win the World Series.",
     onScreen: ["A single drawn coupon object. Nothing else."],
     narration:
-      "Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees make the playoffs, and nothing if they don't. What should that coupon cost?",
+      "Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should that coupon cost?",
     productionNote: MARKET_NOTE,
   },
   {
@@ -207,12 +207,14 @@ export const SLIDES: Slide[] = [
     act: ACTS[4],
     title: "Pick an event.",
     onScreen: [
-      "Screen recording of the merchant console — the promo typed, the real ticker resolving, the live book, the all-in quote.",
+      "Screen recording of the merchant console — the live market picker, each row priced off its own book, thin books refused inline, then the all-in quote on the selected row.",
     ],
     narration:
-      "So here's what we built. The merchant types the promo in plain English. We find the market, check it's deep enough to actually cover them, and quote one number before they commit.",
+      "So here's what we built. Every event that can actually be covered, priced off the live market. Pick one, and you get a single number before you commit — what it costs, and what that is as a plain sale. The ones that can't be covered, it says so.",
+    delivery:
+      "The narration must match the picker, not a text box. The refusals are visible on screen as rows are priced, so the last clause is describing something the viewer can see rather than a claim.",
     productionNote:
-      "Per Victor's review 2026-08-15: the demo is a MENU of runnable events, not plaintext entry. The console shows the product's real market picker (via /api/markets) — each row priced by walking its live book, thin books refused with the reason (including the 97¢ make-the-playoffs market: “book too thin for this size”) — and the highlight lands on the Yankees–World-Series row. When recording, speak “The merchant picks the event from a menu” in place of “types the promo in plain English.”",
+      "Per Victor's review 2026-08-15: the demo is a MENU of runnable events, not plaintext entry. The console shows the product's real market picker (via /api/markets) — each row priced by walking its live book, thin books refused with the reason (including the 97¢ make-the-playoffs market: “book too thin for this size”) — and the highlight lands on the Yankees–World-Series row. Narration corrected 2026-08-15: the plan's “types the promo in plain English” described a product that was never built, and narrating it over a menu would have been visibly false.",
   },
   {
     n: 14,

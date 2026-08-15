@@ -85,9 +85,11 @@ knowable — and it adds fees on top.
 
 ## The product
 
-The merchant types the promo in plain English. We resolve it to a real market, walk the live order book
-to confirm it can absorb the liability, and quote **one all-in number** before they commit. They click
-go. We hold the position, hedge incrementally as orders land, and pay the refunds if it fires.
+The merchant picks an event from a list of the ones we can actually cover — each row priced by walking
+its own live order book, and the ones too thin to hedge refused inline with the reason. Selecting one
+returns **a single all-in number** before they commit, alongside what that same spend would be as a
+plain discount. They click go. We hold the coupons, buy them incrementally as orders land, and pay the
+refunds if it fires.
 
 **They never open an account, never see a contract, never touch the exchange.**
 

@@ -2,8 +2,10 @@
 
 **Date:** 2026-08-15
 **Runtime:** ~4:30 · ~560 words
-**Source of truth for slide content:** [`06-slide-plan.md`](06-slide-plan.md). If the two ever
-disagree, the plan wins and this file gets regenerated from it.
+**Source of truth for slide content:** [`06-slide-plan.md`](06-slide-plan.md) and
+`src/lib/slides.ts`, which must agree. Where the built deck and the plan have diverged, **the built
+deck wins** — it is what the camera will see. Slides 5, 7 and 13 were reconciled that way on
+2026-08-15.
 
 *Formatted for reading aloud. Line breaks are breath points, not sentence ends. Timings are cumulative
 and approximate — they assume the pauses are actually held.*
@@ -51,13 +53,16 @@ and approximate — they assume the pauses are actually held.*
 
 ---
 
-### 5 · `Yes — it's a discount.` — 1:10
+### 5 · `It's the same discount.` — 1:10
 
-> So yes, this is a discount.
-> That's the point.
+> That's the objection everyone's about to have,
+> so let's not dodge it.
 >
-> It costs what your sale costs.
-> The difference is that people talk about this one.
+> And it's exactly the point —
+> nobody has ever repeated a ten-percent-off sale.
+> Somebody repeats this one.
+
+**The sentence is on screen; do not read it. The screen makes the claim, you name it as the objection.**
 
 ---
 
@@ -74,12 +79,12 @@ and approximate — they assume the pauses are actually held.*
 
 ---
 
-### 7 · `A coupon worth $1 if the Yankees make the playoffs.` — 1:40
+### 7 · `A coupon worth $1 if the Yankees win the World Series.` — 1:40
 
 > Which is where this gets interesting.
 >
 > Picture a coupon.
-> It pays you one dollar if the Yankees make the playoffs,
+> It pays you one dollar if the Yankees win the World Series,
 > and nothing if they don't.
 >
 > What should that coupon cost?
@@ -106,7 +111,7 @@ and approximate — they assume the pauses are actually held.*
 > So two thousand dollars buys you twenty thousand of those coupons.
 >
 > Which means twenty thousand dollars shows up —
-> but only if the Yankees make it.
+> but only if they win it.
 
 ---
 
@@ -139,13 +144,20 @@ and approximate — they assume the pauses are actually held.*
 
 ---
 
-### 13 · `Type it in English.` — 3:15
+### 13 · `Pick an event.` — 3:15
 
 > So here's what we built.
 >
-> The merchant types the promo in plain English.
-> We find the market, check it's deep enough to actually cover them,
-> and quote one number before they commit.
+> Every event that can actually be covered,
+> priced off the live market.
+>
+> Pick one, and you get a single number before you commit —
+> what it costs, and what that is as a plain sale.
+>
+> The ones that can't be covered, it says so.
+
+**Match the picker, not a text box — the product has no free-text entry. The refusals are visible on
+screen as rows price, so the last line describes what the viewer is watching.**
 
 ---
 
@@ -197,5 +209,5 @@ and approximate — they assume the pauses are actually held.*
   the from-zero property is lost.
 - **Three pauses are written into the script and all three are load-bearing:** slide 4 before speaking,
   slide 10's slowed delivery, slide 11's three seconds of silence.
-- If it runs long, cut slide 5 and fold *"yes, this is a discount"* onto the end of slide 4. Saves
-  ~15 seconds and costs the least.
+- If it runs long, cut slide 5 and fold its objection-naming onto the end of slide 4. Saves ~15
+  seconds and costs the least.
