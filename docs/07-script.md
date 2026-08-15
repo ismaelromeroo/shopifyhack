@@ -131,8 +131,8 @@ staccato list, and the contrast is what makes the opening feel like an opening.
 
 **19** · `+5 in 100`
 
-> Sell five more orders in a hundred and the fees are paid for.
-> That's the whole bar — and you don't take it on faith, because every campaign runs a holdout, so your first promo measures itself against the sale you'd have run anyway.
+> At one-in-ten odds you need about five more orders per hundred to cover the fees, and that's the whole bar.
+> You'll know if you hit it, too, because half your traffic keeps running the plain sale, so there's always something to compare against.
 
 **20** · `closing card`
 

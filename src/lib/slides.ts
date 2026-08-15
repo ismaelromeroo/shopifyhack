@@ -301,7 +301,7 @@ export const SLIDES: Slide[] = [
       "“+5” very large; beneath it, a row of 100 order dots with the last five filling in. Label: “in 100 orders.”",
     ],
     narration:
-      "Sell five more orders in a hundred and the fees are paid for. That's the whole bar — and you don't take it on faith, because every campaign runs a holdout, so your first promo measures itself against the sale you'd have run anyway.",
+      "At one-in-ten odds you need about five more orders per hundred to cover the fees, and that's the whole bar. You'll know if you hit it, too, because half your traffic keeps running the plain sale, so there's always something to compare against.",
     delivery:
       "The figure is the required behavioral edge from docs/01-math.md §8: ~3.4% extra units to tie with exchange friction only, ~5% with our 10%-of-premium fee included (docs/05-pitch.md, “What has to be true”). If pressed: nobody has ever measured this properly, which is exactly why the holdout ships on by default — the first campaign answers it with the merchant's own numbers.",
     notOnScreen: ["The percent sign, the formula, the word “lift.”"],
