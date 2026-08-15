@@ -54,14 +54,13 @@ and an argument a listener can check against their own intuition (Slide 8).
 
 ### Slide 4 — `$2,000` / `$2,000`  *(build on Slide 3)*
 - **On screen:** the same two cards; a price drops into each. Both read **$2,000**. Hold three seconds.
-- **Narration:** *"Here's the part that surprised us. Those two cost the same. A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story."*
+- **Narration:** *"A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story."*
 - **Not on screen:** the phrase "expected value," any formula.
 
 ### Slide 5 — `It's the same discount.`
 - **On screen:** the sentence alone, centred.
-- **Narration:** *"That's the objection everyone's about to have, so let's not dodge it. And it's exactly the point — nobody has ever repeated a ten-percent-off sale. Somebody repeats this one."*
-- **Why it's here:** pre-empting the obvious objection is worth more than defending it later, and in a video there is no later.
-- **Delivery:** the narration must **not restate the sentence on screen.** The screen makes the claim; the voice names it as *the objection* and supplies the differentiator the screen can't show. Narration that duplicates visible text measurably hurts comprehension rather than reinforcing it.
+- **Narration:** *"One order in ten goes free. So across a hundred orders, you've given away ten of them — that's the same ten percent. All that changed is where it lands: everything on one customer, instead of a little on everyone."*
+- **Delivery:** this slide **earns** the claim on screen; it does not defend it. Explain the arithmetic and never pre-empt an objection — signalling that you expect to be doubted invites the doubt. Give the equivalence in **counts, not percentages** ("ten orders out of a hundred" is far easier to follow aloud than "a 10% chance"). The closing clause introduces *concentration* — the real difference between the two promos — as an observation rather than an argument.
 
 ---
 
@@ -79,33 +78,34 @@ and an argument a listener can check against their own intuition (Slide 8).
 *Six slides that build the mechanism one step at a time. No prior knowledge of markets, hedging or
 finance. Each slide introduces exactly one new idea.*
 
-### Slide 7 — `A coupon worth $1 if the Yankees win the World Series.`
-- **On screen:** a single drawn coupon object. Nothing else.
-- **Narration:** *"Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should that coupon cost?"*
+### Slide 7 — `A contract that pays $1 if the Yankees win the World Series.`
+- **On screen:** a single drawn contract card. Nothing else.
+- **Narration:** *"Which is where this gets interesting. There's a contract that pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should it cost?"*
 
 ### Slide 8 — `10¢`  *(live)*
-- **On screen:** the coupon with a price stamped on it, pulled **live from Kalshi**, with a small `live · updated 2s ago` tag and the real ticker.
-- **Narration:** *"Exactly the odds. If the Yankees are a one-in-ten shot, it's worth ten cents. Any cheaper and you'd buy every one you could find. Any more and you'd sell them. And this isn't hypothetical — that's a real market, and that's the real price, right now."*
+- **On screen:** the contract with a price stamped on it, pulled **live from Kalshi**, with a small `live · updated 2s ago` tag and the real ticker.
+- **Narration:** *"Exactly the odds. If the Yankees are a one-in-ten shot, it's worth ten cents. Any cheaper and you'd buy every one you could find. Any more and you'd sell them. That's a real market, and that's the real price, right now."*
 - **Delivery — this is where you lose people or don't.** It is the only genuine conceptual leap in the deck. It works out loud because the arbitrage argument (*any cheaper and you'd buy every one*) is checkable against ordinary haggling intuition and requires no finance. Do not rush it. Let the live price sit on screen while you say it.
 
-### Slide 9 — `20,000 coupons = $2,000`
-- **On screen:** the single coupon multiplies into a block; `$2,000` beneath.
-- **Narration:** *"So two thousand dollars buys you twenty thousand of those coupons. Which means twenty thousand dollars shows up — but only if the Yankees make it."*
+### Slide 9 — `20,000 contracts = $2,000`
+- **On screen:** the single contract multiplies into a block; `$2,000` beneath.
+- **Narration:** *"So two thousand dollars buys you twenty thousand of them. Which means twenty thousand dollars shows up — but only if they win it."*
 
 ### Slide 10 — `That's exactly when you owe $20,000.`
-- **On screen:** the coupon block on the left, a stack of customer refunds on the right, an equals sign between them.
+- **On screen:** the contract block on the right, a stack of customer refunds on the right, an equals sign between them.
 - **Narration:** *"And that is exactly when you owe your customers twenty thousand dollars. The money arrives at the same moment the bill does."*
 - **Delivery — the load-bearing sentence of the entire deck.** If a listener retains one line, it is *"the money arrives at the same moment the bill does."* Make it the slowest sentence in the recording. Everything before it is setup; everything after it is bookkeeping.
 
 ### Slide 11 — the payoff table *(the one dense slide)*
-- **On screen:** two columns, *Yankees make it* / *they don't*, four rows, both bottom lines reading **−$2,126** in the largest type on the slide.
-- **Narration:** *(three full seconds of silence)* — then *"Either way: twenty-one twenty-six. Win or lose, the same number. The uncertainty is just gone."*
+- **On screen:** two columns, *Yankees win it* / *they don't*, **five rows** — the fifth is *Our fee, −$200* — both bottom lines reading **−$2,326**, labelled *Total cost of the promo*, in the largest type on the slide.
+- **Narration:** *(three full seconds of silence)* — then *"Either way: twenty-three twenty-six. Win or lose, the same number. The uncertainty is just gone."*
 - **Delivery:** the silence is not a stylistic flourish. The table resolves itself faster than narration can describe it, and talking over it competes with the only slide where reading is the point.
 - **Not on screen:** percentages, fee formulas, footnotes.
 
-### Slide 12 — `$2,000 → $2,126`
-- **On screen:** the flat-discount price and the contingent price, side by side, arrow between.
-- **Narration:** *"Against the two-thousand-dollar sale he was already running."*
+### Slide 12 — `10% off = 1-in-10 free`
+- **On screen:** the two offers, side by side, with an equals sign between them — slide 3's comparison, now earned.
+- **Delivery:** this slide closes the maths act on the **equality**, not on the premium. Do not put the two dollar figures side by side here; showing `$2,000 → $2,326` reads as *we made your sale more expensive*, which is the wrong last thing to leave in the viewer's head.
+- **Narration:** *"Which means the merchant isn't deciding whether to spend the money. He's already spending it. He's deciding what shape it takes."*
 
 ---
 
@@ -118,7 +118,7 @@ finance. Each slide introduces exactly one new idea.*
 
 ### Slide 14 — `They never see a contract.`
 - **On screen:** continuation — click go, orders arrive, the liability and coverage lines tracking each other.
-- **Narration:** *"They click go. They never open an account, never place a trade, never see a contract. We hold the coupons, and we pay the refunds."*
+- **Narration:** *"They click go. They never open an account, never place a trade. We hold the contracts, and we pay the refunds."*
 - **Note the word choice:** *coupons*, not *position*. Slide 7's object is still doing work eight slides later.
 
 ### Slide 15 — the customer's phone

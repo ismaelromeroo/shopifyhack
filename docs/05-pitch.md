@@ -76,7 +76,8 @@ liability $20,000:
 | Hedge payout | **+$20,000** | $0 |
 | Premium, paid upfront | −$2,000 | −$2,000 |
 | Exchange fee, paid upfront | −$126 | −$126 |
-| **Net cost** | **−$2,126** | **−$2,126** |
+| Our management fee | −$200 | −$200 |
+| **Total cost of the promo** | **−$2,326** | **−$2,326** |
 
 **The hedge fixes variance, not the mean.** It does not make the promotion cheaper. It makes it
 knowable — and it adds fees on top.

@@ -1,213 +1,139 @@
-# 07 — Narration Script
+# 07 — Script
 
-**Date:** 2026-08-15
-**Runtime:** ~4:30 · ~560 words
-**Source of truth for slide content:** [`06-slide-plan.md`](06-slide-plan.md) and
-`src/lib/slides.ts`, which must agree. Where the built deck and the plan have diverged, **the built
-deck wins** — it is what the camera will see. Slides 5, 7 and 13 were reconciled that way on
-2026-08-15.
+Spoken words only. Staging, delivery notes and reasoning live in
+[`06-slide-plan.md`](06-slide-plan.md); this file is for the person at the microphone.
 
-*Formatted for reading aloud. Line breaks are breath points, not sentence ends. Timings are cumulative
-and approximate — they assume the pauses are actually held.*
+**Generated from `src/lib/slides.ts`.** Do not hand-edit. Also rendered at `/script`.
 
----
+20 slides · ~5:20 · four voices. Splits fall on act boundaries and never inside an animated build
+(3→4, 10→11, 15→16 each stay with one voice).
 
-### 1 · `Every store is running a sale.` — 0:00
+Voice 1 is deliberately clipped — short declaratives, because the opening has to land fast. Voices 2–4
+run longer and more connected: the body of the argument reads better as flowing sentences than as a
+staccato list, and the contrast is what makes the opening feel like an opening.
 
-> Every store you walk past
-> is running a sale right now.
 
 ---
 
-### 2 · `Most of it is wasted.` — 0:10
+## Voice 1 — slides 1–5 · 0:00–1:20
+
+*The problem and the idea*
+
+
+**1** · `Every store is running a sale.`
+
+> Every store you walk past is running a sale right now.
+
+**2** · `Most of it is wasted.`
 
 > And most of that money does nothing.
-> The people taking the discount were mostly going to buy anyway —
-> so you've handed margin to customers you already had.
->
+> The people taking the discount were mostly going to buy anyway — so you've handed margin to customers you already had.
 > And nobody, ever, has told a friend about ten percent off.
 
----
-
-### 3 · `Same money. Different shape.` — 0:35
+**3** · `Same money. Different shape.`
 
 > So what if the same money bought something people actually talked about?
->
-> Instead of ten percent off for everyone —
-> a one-in-ten chance your whole order is free.
+> Instead of ten percent off for everyone — a one-in-ten chance your whole order is free.
 
----
+**4** *(build)* · `$2,000 / $2,000`
 
-### 4 · `$2,000 / $2,000` — 0:50
-
-> Here's the part that surprised us.
-> Those two cost the same.
->
 > A hundred orders, two hundred dollars each.
 > Ten percent off is two thousand dollars.
 > And a one-in-ten chance of giving an order away — also two thousand.
->
-> Same money. Completely different story.
+> Same money.
+> Completely different story.
 
-**Hold three seconds on the two prices before speaking.**
+**5** · `It's the same discount.`
 
----
-
-### 5 · `It's the same discount.` — 1:10
-
-> That's the objection everyone's about to have,
-> so let's not dodge it.
->
-> And it's exactly the point —
-> nobody has ever repeated a ten-percent-off sale.
-> Somebody repeats this one.
-
-**The sentence is on screen; do not read it. The screen makes the claim, you name it as the objection.**
+> One order in ten goes free.
+> So across a hundred orders, you've given away ten of them — that's the same ten percent.
+> All that changed is where it lands: everything on one customer, instead of a little on everyone.
 
 ---
 
-### 6 · `$0 or $20,000` — 1:20
+## Voice 2 — slides 6–11 · 1:20–2:50
+
+*Why nobody does it, and the mechanism*
+
+
+**6** · `$0 or $20,000`
 
 > So why doesn't anyone do it?
->
-> Because if it hits, you owe every customer at once.
-> That promise costs you nothing — or twenty thousand dollars.
->
-> That's not a marketing decision.
-> That's a bet you can't afford to lose.
-> And no ordinary store signs it.
+> Because if it hits you owe every customer at once, which makes that promise cost you either nothing or twenty thousand dollars — and a swing that size isn't a marketing decision, it's a bet you can't afford to lose.
+> No ordinary store signs it.
+
+**7** · `A contract that pays $1 if the Yankees win the World Series.`
+
+> Which is where this gets interesting, because there's a contract that pays you one dollar if the Yankees win the World Series and nothing at all if they don't.
+> What should it cost?
+
+**8** · `10¢ (live)`
+
+> Exactly the odds — a one-in-ten shot costs ten cents, which means the price of the contract is simply the price of the promise you're making.
+
+**9** · `Kalshi · Polymarket`
+
+> We buy those on Kalshi, a prediction market, and Polymarket is the other one — and that's the only moving part in any of this that lives outside your store.
+
+**10** · `20,000 contracts = $2,000`
+
+> So two thousand dollars buys you twenty thousand of them, which means twenty thousand dollars arrives — but only if they win it.
+
+**11** *(build)* · `That's exactly when you owe $20,000.`
+
+> And that is exactly when you owe your customers twenty thousand dollars, so the money arrives at the same moment the bill does.
 
 ---
 
-### 7 · `A coupon worth $1 if the Yankees win the World Series.` — 1:40
+## Voice 3 — slides 12–16 · 2:50–4:00
 
-> Which is where this gets interesting.
->
-> Picture a coupon.
-> It pays you one dollar if the Yankees win the World Series,
-> and nothing if they don't.
->
-> What should that coupon cost?
+*The payoff, the proof, the product*
 
----
 
-### 8 · `10¢` *(live)* — 1:55
+**12** · `the payoff table (the one dense slide)`
 
-> Exactly the odds.
->
-> If the Yankees are a one-in-ten shot, it's worth ten cents.
-> Any cheaper and you'd buy every one you could find.
-> Any more and you'd sell them.
->
-> And this isn't hypothetical —
-> that's a real market, and that's the real price, right now.
+> (three full seconds of silence) — then: “Either way, twenty-three twenty-six — win or lose, the same number, and the uncertainty is simply gone.” — then, once the table has landed: “That's all hedging is: you're not betting on the Yankees, you're buying certainty about what this promotion costs.”
 
-**The only conceptual leap in the deck. Slow down. Let the live price sit on screen while you say it.**
+**13** · `10% off = 1-in-10 free`
 
----
+> Which means the merchant isn't deciding whether to spend the money — he's already spending it — he's deciding what shape it takes.
 
-### 9 · `20,000 coupons = $2,000` — 2:15
+**14** · `$75M`
 
-> So two thousand dollars buys you twenty thousand of those coupons.
->
-> Which means twenty thousand dollars shows up —
-> but only if they win it.
+> Does anyone actually talk about these?
+> At the extreme, a Houston furniture store ran exactly this promise on the World Series and sold seventy-five million dollars of furniture, making national news twice: once when he promised it, and again when everyone got paid.
+> Nobody has ever written a headline about ten percent off.
+
+**15** · `Pick an event.`
+
+> So here's what we built: every event that can actually be covered, priced off the live market, so you pick one and get a single number before you commit — what it costs, and what that same money is as a plain sale.
+> The ones we can't cover, it tells you.
+
+**16** · `They never place a trade.`
+
+> They click go, and from there they never open an account and never place a trade — we hold the contracts, and we pay the refunds.
 
 ---
 
-### 10 · `That's exactly when you owe $20,000.` — 2:30
+## Voice 4 — slides 17–20 · 4:00–5:05
 
-> And that is exactly when you owe your customers twenty thousand dollars.
->
-> The money arrives at the same moment the bill does.
+*The customer, the model, the close*
 
-**The load-bearing sentence of the whole deck. Make it the slowest line in the recording.**
 
----
+**17** · `the customer's phone`
 
-### 11 · the payoff table — 2:50
+> And the customer gets this: their order, riding on the Yankees, with live odds — and when it hits, the Yankees won, your order was free.
+> A hundred customers just became a hundred people telling that story.
 
-> *(three full seconds of silence)*
->
-> Either way: twenty-one twenty-six.
-> Win or lose, the same number.
->
-> The uncertainty is just gone.
+**18** · `three lines`
 
-**The silence is functional. The table resolves faster than narration can describe it.**
+> We make money the way the exchange does, with a management fee on the coverage — ten percent of the promo budget they were already spending.
 
----
+**19** · `+5 in 100`
 
-### 12 · `$2,000 → $2,126` — 3:05
+> At one-in-ten odds you need about five more orders per hundred to cover the fees, and that's the whole bar.
+> You'll know if you hit it, too, because half your traffic keeps running the plain sale, so there's always something to compare against.
 
-> Against the two-thousand-dollar sale he was already running.
+**20** · `closing card`
 
----
-
-### 13 · `Pick an event.` — 3:15
-
-> So here's what we built.
->
-> Every event that can actually be covered,
-> priced off the live market.
->
-> Pick one, and you get a single number before you commit —
-> what it costs, and what that is as a plain sale.
->
-> The ones that can't be covered, it says so.
-
-**Match the picker, not a text box — the product has no free-text entry. The refusals are visible on
-screen as rows price, so the last line describes what the viewer is watching.**
-
----
-
-### 14 · `They never see a contract.` — 3:35
-
-> They click go.
->
-> They never open an account, never place a trade, never see a contract.
-> We hold the coupons, and we pay the refunds.
-
----
-
-### 15 · the customer's phone — 3:50
-
-> And the customer gets this.
-> Their order, riding on the Yankees, with live odds.
->
-> And when it hits —
-> *the Yankees won, your order was free.*
-
----
-
-### 16 · three lines — 4:05
-
-> We make money the way the exchange does:
-> a management fee on the coverage.
->
-> Ten percent of the promo budget they were already spending.
-
----
-
-### 17 · closing card — 4:20
-
-> **[Name].**
-> Turn your discount into something worth talking about.
-
-**Then stop talking.**
-
----
-
-## Recording notes
-
-- **Record the visuals silent first, then voice over them.** Narrating live while clicking produces
-  dead air and fumbling; separating the two is the single largest quality gain available for no extra
-  work.
-- **The words that never appear** — *hedge, prediction market, contract, position, expected value,
-  variance* — are absent on purpose. One object is introduced (the coupon, slide 7) and it carries
-  through to slide 14's *"we hold the coupons."* If a re-record drifts back into finance vocabulary,
-  the from-zero property is lost.
-- **Three pauses are written into the script and all three are load-bearing:** slide 4 before speaking,
-  slide 10's slowed delivery, slide 11's three seconds of silence.
-- If it runs long, cut slide 5 and fold its objection-naming onto the end of slide 4. Saves ~15
-  seconds and costs the least.
+> Covered.

@@ -206,7 +206,7 @@ This is the most important new finding in this document and it comes from number
 [`01-math.md`](01-math.md) — no new research required.
 
 **Mechanism.** The reframe closes on "**~6% more than the discount you're already running.**" That figure
-is real: 100 orders × $200, 10% trigger, flat discount = **$2,000**; contingent = **$2,126**, a **+6.3%**
+is real: 100 orders × $200, 10% trigger, flat discount = **$2,000**; contingent = **$2,326** all-in, a **+16.3%**
 premium ([`01-math.md`](01-math.md) §4). But $2,126 assumes a **passive fill at $0.10** on a deep book.
 Change either assumption and the sentence stops being true.
 

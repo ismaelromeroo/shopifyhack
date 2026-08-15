@@ -7,9 +7,16 @@ import { SceneStore, SceneWasted, SceneCards, SceneYes, SceneZeroOr } from "./sc
 import { CouponSaga } from "./coupon-saga";
 import { ConsoleScene } from "./console-scene";
 import { PhoneScene } from "./phone-scene";
-import { ScenePayoffTable, SceneSameSale, SceneThreeLines, SceneClose } from "./scenes-b";
+import {
+  ScenePayoffTable,
+  SceneSameSale,
+  SceneWom,
+  SceneBar,
+  SceneThreeLines,
+  SceneClose,
+} from "./scenes-b";
 
-const LAST = 17;
+const LAST = 20;
 
 /**
  * Slides that share a visual composition share a group; within a group a
@@ -18,8 +25,9 @@ const LAST = 17;
  */
 const GROUP: Record<number, string> = {
   1: "s1", 2: "s2", 3: "s3", 4: "s3", 5: "s5", 6: "s6",
-  7: "s7", 8: "s7", 9: "s7", 10: "s7",
-  11: "s11", 12: "s12", 13: "s13", 14: "s13", 15: "s15", 16: "s16", 17: "s17",
+  7: "s7", 8: "s7", 9: "s7", 10: "s7", 11: "s7",
+  12: "s11", 13: "s12", 14: "wom", 15: "console", 16: "console",
+  17: "phone", 18: "lines", 19: "bar", 20: "close",
 };
 
 function Scene({ n }: { n: number }) {
@@ -32,10 +40,12 @@ function Scene({ n }: { n: number }) {
     case "s7": return <CouponSaga n={n} />;
     case "s11": return <ScenePayoffTable />;
     case "s12": return <SceneSameSale />;
-    case "s13": return <ConsoleScene n={n as 13 | 14} />;
-    case "s15": return <PhoneScene />;
-    case "s16": return <SceneThreeLines />;
-    case "s17": return <SceneClose />;
+    case "wom": return <SceneWom />;
+    case "console": return <ConsoleScene n={n as 15 | 16} />;
+    case "phone": return <PhoneScene />;
+    case "lines": return <SceneThreeLines />;
+    case "bar": return <SceneBar />;
+    case "close": return <SceneClose />;
     default: return null;
   }
 }
@@ -101,8 +111,11 @@ export default function Deck() {
 
   return (
     <DeckQuoteProvider>
+      {/* leading-[1.15] is load-bearing: the shared design tokens give body a
+          fixed 21px line-height, which collapses the line box under vmin-scale
+          display type — every scene inherits a unitless leading instead. */}
       <div
-        className={`fixed inset-0 select-none overflow-hidden bg-paper text-ink ${
+        className={`fixed inset-0 select-none overflow-hidden bg-paper leading-[1.15] text-ink ${
           idle ? "cursor-hidden" : ""
         }`}
       >

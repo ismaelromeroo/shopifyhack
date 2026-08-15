@@ -13,7 +13,7 @@ import { EASE, SlideLabel, useStages } from "./primitives";
 import { useDeckQuote } from "./deck-quote";
 
 /**
- * Slides 13 + 14 — the merchant console, one persistent panel.
+ * Slides 14 + 15 — the merchant console, one persistent panel.
  * The demo interaction is a MENU, not plaintext: a list of real events the
  * promo can ride on, each priced by walking its live book (via the product's
  * own /api/markets). A highlight browses the rows, lands on the Yankees–
@@ -236,17 +236,17 @@ function OrdersChart({ running }: { running: boolean }) {
       </svg>
       <div className="flex justify-between font-mono text-[1.6vmin] text-g500">
         <span>grey: refunds owed if it hits</span>
-        <span>black: coupons we hold</span>
+        <span>black: contracts we hold</span>
       </div>
     </div>
   );
 }
 
-export function ConsoleScene({ n }: { n: 13 | 14 }) {
+export function ConsoleScene({ n }: { n: 15 | 16 }) {
   const q = useDeckQuote();
   const rm = useReducedMotion();
-  // On 13 the console assembles itself; entering 14 directly shows it built.
-  const [startedOn13] = useState(n === 13);
+  // On 14 the console assembles itself; entering 15 directly shows it built.
+  const [startedOn15] = useState(n === 15);
 
   // the product's own menu data, priced against the 100 × $200 campaign
   const [menu, setMenu] = useState<MenuRow[] | null>(null);
@@ -272,16 +272,16 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
   // stages: 1–4 browse the menu, 5 select, 6 market, 7 book, 8 quote
   const stage =
     useStages(
-      startedOn13 ? [1200, 1650, 2100, 2550, 3150, 3900, 4500, 5500] : [],
-      startedOn13
-    ) + (startedOn13 ? 0 : 8);
+      startedOn15 ? [1200, 1650, 2100, 2550, 3150, 3900, 4500, 5500] : [],
+      startedOn15
+    ) + (startedOn15 ? 0 : 8);
   const browseOrder = [1, 2, 3, 0];
   const highlightIdx =
     stage >= 1 && stage <= 4
       ? Math.min(browseOrder[stage - 1], rows.length - 1)
       : -1;
   const selected = stage >= 5;
-  const go = n === 14;
+  const go = n === 16;
 
   const quote = q.payload?.quote ?? null;
   const premium = quote?.premiumCents ?? RUNNING_EXAMPLE.premiumCents;
@@ -328,7 +328,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
                     key={row.ticker}
                     layout
                     initial={
-                      startedOn13 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
+                      startedOn15 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
                     }
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, transition: { duration: 0.25 } }}
@@ -372,7 +372,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
                 </span>
                 <span className="tnum text-g500">
                   {" "}
-                  · {fmtInt(contracts(restingC100))} coupons resting ·{" "}
+                  · {fmtInt(contracts(restingC100))} contracts resting ·{" "}
                   {feasible ? "covers 20,000 ✓" : "too thin — blocked"}
                 </span>
               </motion.div>
@@ -405,7 +405,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
                   </AnimatePresence>
                 </div>
                 <div className="tnum mt-[0.4vmin] text-[1.9vmin] text-g600">
-                  coupons {fmtMoney(premium, { round: true })} · exchange fee{" "}
+                  contracts {fmtMoney(premium, { round: true })} · exchange fee{" "}
                   {fmtMoney(exchangeFee, { round: true })} · our fee{" "}
                   {fmtMoney(ourFee, { round: true })}
                 </div>
@@ -417,7 +417,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
         </motion.div>
       </div>
       <SlideLabel>
-        {n === 13 ? "Pick an event." : "They never see a contract."}
+        {n === 15 ? "Pick an event." : "They never place a trade."}
       </SlideLabel>
     </div>
   );

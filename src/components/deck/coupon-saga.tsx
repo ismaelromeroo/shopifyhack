@@ -7,11 +7,12 @@ import { DeckLiveTag } from "./deck-live-tag";
 import { useDeckQuote } from "./deck-quote";
 
 /**
- * Slides 7–10 are one component so the coupon never remounts:
- *   7  a single drawn coupon
- *   8  the same coupon, live price stamped on it
- *   9  the same coupon (layoutId) shrinks into a block of 20,000
- *   10 the block travels left, the refund stack arrives, they resolve: =
+ * Slides 7–11 are one component so the contract never remounts:
+ *   7  a single drawn contract
+ *   8  the same contract, live price stamped on it
+ *   9  the same contract, still there — the venues that price it appear beneath
+ *   10 the same contract (layoutId) shrinks into a block of 20,000
+ *   11 the block travels left, the refund stack arrives, they resolve: =
  */
 
 const COLS = 20;
@@ -88,10 +89,63 @@ function RefundSlip({ i }: { i: number }) {
   );
 }
 
+/* ── Slide 9 — where the price comes from ────────────────────────────────
+   The contract from 7–8 is still on screen, shrunk. Two regulated venues
+   arrive beneath it, Kalshi first and weighted heavier because it is the
+   one the deck's live price is actually pulled from. The rule beneath each
+   name draws left-to-right so the pair reads as a list being written, not
+   a logo wall fading in. */
+function Venues() {
+  const rm = useReducedMotion();
+  const row = (
+    name: string,
+    note: string,
+    delay: number,
+    primary: boolean
+  ) => (
+    <motion.div
+      initial={rm ? { opacity: 0 } : { opacity: 0, y: "0.35em" }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay, duration: 0.6, ease: EASE }}
+      className="flex flex-col items-center gap-[0.9vmin]"
+    >
+      <div
+        className={
+          primary
+            ? "text-[5.4vmin] font-bold tracking-tight text-ink"
+            : "text-[5.4vmin] font-light tracking-tight text-g500"
+        }
+      >
+        {name}
+      </div>
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ delay: delay + 0.25, duration: 0.5, ease: EASE }}
+        style={{ transformOrigin: "left" }}
+        className={`h-[0.22vmin] w-full ${primary ? "bg-ink" : "bg-g400"}`}
+      />
+      <div className="text-[1.9vmin] leading-[1.4] text-g500">{note}</div>
+    </motion.div>
+  );
+
+  return (
+    <motion.div
+      key="venues"
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      className="flex items-start gap-[9vmin]"
+    >
+      {row("Kalshi", "where we buy", 0.15, true)}
+      {row("Polymarket", "the other one", 0.55, false)}
+    </motion.div>
+  );
+}
+
 export function CouponSaga({ n }: { n: number }) {
   const rm = useReducedMotion();
   const q = useDeckQuote();
-  const resolved = n >= 10;
+  const resolved = n >= 11;
 
   const cells = useMemo(() => {
     const out: { r: number; c: number; dist: number }[] = [];
@@ -105,13 +159,21 @@ export function CouponSaga({ n }: { n: number }) {
     return out;
   }, []);
 
-  if (n <= 8) {
+  if (n <= 9) {
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-[3.5vmin]">
-        <BigCoupon stamped={n === 8} />
-        <AnimatePresence>
+        {/* the card shrinks on 9 to make room for the venues that price it */}
+        <motion.div
+          animate={{ scale: n === 9 ? 0.72 : 1 }}
+          transition={{ duration: rm ? 0 : 0.7, ease: EASE }}
+        >
+          <BigCoupon stamped={n >= 8} />
+        </motion.div>
+
+        <AnimatePresence mode="popLayout">
           {n === 8 && (
             <motion.div
+              key="tag"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.15 } }}
@@ -120,6 +182,7 @@ export function CouponSaga({ n }: { n: number }) {
               <DeckLiveTag />
             </motion.div>
           )}
+          {n === 9 && <Venues key="venues" />}
         </AnimatePresence>
       </div>
     );
@@ -144,7 +207,7 @@ export function CouponSaga({ n }: { n: number }) {
             animate={{ scale: resolved ? 0.74 : 1 }}
             className="flex flex-col items-center gap-[2.6vmin]"
           >
-            <div className="text-[2.2vmin] text-g500">20,000 coupons</div>
+            <div className="text-[2.2vmin] text-g500">20,000 contracts</div>
             <div
               className="grid"
               style={{

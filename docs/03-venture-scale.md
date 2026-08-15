@@ -134,7 +134,7 @@ merchant was already running.
 | 100 orders × $200 = $20,000 revenue | Flat discount | Contingent discount |
 |---|---|---|
 | Offer | 10% off, everyone | 10% chance your order is free |
-| Merchant cost | **$2,000** | **$2,126** ([`00-thesis.md`](00-thesis.md), passive fill at $0.10) |
+| Merchant cost | **$2,000** | **$2,326** all-in ([`00-thesis.md`](00-thesis.md); $2,126 exchange cost at passive fill, plus our $200 fee) |
 | Cost as % of revenue | 10.00% | **10.63%** |
 | Delta | — | **+6.3%** |
 | What the customer tells a friend | nothing | the offer |
