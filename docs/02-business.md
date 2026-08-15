@@ -13,19 +13,27 @@ compliant architecture, and what actually breaks.
 line item. Instead of 10% off for everyone, a 1-in-10 chance the order is free — priced, hedged, and
 capped before launch, at roughly the cost of the discount it replaces.
 
-**How it's built: as a FACILITATOR.** The merchant is principal, owns their own Kalshi account, owns
-the refund obligation. We sell trigger selection, feasibility gating, live sizing, and refund execution.
+**How it's built: we take the risk.** We hold the Kalshi account, place the hedge on our own book, and
+pay the refunds. The merchant never opens a brokerage account and never sees a contract. They see one
+number — *this promo costs $2,300* — pay it, and we run everything behind it. Our revenue is the spread
+between the quoted price and what the hedge costs us.
 
-That is the only structure buildable without an insurance license or a balance sheet — and it is also
-the structure with the **worst survival record in the closest comp set**. In embedded protection, the
-companies that cleared $1B own either the **risk** (Cover Genius, Extend) or the **distribution**
-(Route's consumer app). The pure software layer in between went 0-for-3: Clyde was
+**This is a decision, not a default, and §4 argues it.** The alternative — merchant as principal on
+their own account — is buildable without a license, and it is also the structure with the **worst
+survival record in the closest comp set**. In embedded protection, the companies that cleared $1B own
+either the **risk** (Cover Genius, Extend) or the **distribution** (Route's consumer app). The pure
+software layer in between went 0-for-3: Clyde was
 [asset-acquired in a fire sale alongside layoffs of 50–60% of ~45 staff](https://coverager.com/cover-genius-acquires-the-assets-of-clyde/),
 Mulberry announced a turnaround, and Seel has
 [not raised since a $17M Series A in January 2022](https://fintech.global/2022/01/19/seel-secures-series-a-for-e-commerce-insurance/).
 
-Both things are true and this doc does not resolve them. The facilitator is the *correct build* and the
-*wrong-shaped business*. Everything below says how wrong-shaped, and where the narrow version works.
+Neither structure is unregulated; they are **regulated on different axes**. Holding the risk is clean on
+the trading axis — we trade our own book, so no introducing-broker or CTA question and no conflict with
+Kalshi's developer terms — and dirty on the insurance axis, because taking a fee to cover someone's
+contingent payout is prize indemnity in substance. Merchant-as-principal inverts exactly that. We are
+choosing the axis where the constraint is **purchasable** (a license and fronting collateral) over the
+one where it is **structural** (a platform term of service we cannot negotiate, and a broker
+registration that bites the capital-light model specifically).
 
 **The central commercial risk is no longer safety. It is adoption.** The old framing — "merchants want
 to run contingent promos but the risk is terrifying, so we make it safe" — assumed a behavior that does
@@ -190,10 +198,10 @@ Every $1B comparable in the adjacent category resolved this the same way — **t
 money and the risk**, and the merchant sees a checkbox. Cover Genius and Extend own the risk; Route owns
 the consumer relationship. Nobody cleared $1B selling the seam between them.
 
-So the honest statement of the roadmap is: **the facilitator is the shippable v1 and the instrument that
-collects the data; it is not the terminal shape.** Moving to principal costs an insurance license and
-capital, and it is a different company with different investors. Two cautions against treating it as an
-escape hatch:
+That is why we take the risk rather than broker it. **Seamlessness is not a UX preference here — it is
+the thing the comp set says determines survival.** A merchant asked to open a brokerage account, accept
+exchange terms and hold a live position will not do it, and the company that only sells them the tooling
+to do it is sitting in the 0-for-3 seat. Three cautions against treating risk-holding as a free win:
 
 - **Cover Genius** is marked at [**US$1.9B on a $100M raise backed by Vista Credit Partners**](https://www.insurancejournal.com/news/national/2026/07/16/877769.htm)
   (July 2026). No source states whether the instrument is debt or equity — the "credit facility" read
@@ -210,9 +218,16 @@ escape hatch:
 keeps a spread on a pool that scales with GMV. This product is **merchant-paid** and competes against
 the discount budget. The embedded-insurance TAM does not transfer, and neither does its take rate.
 
-**Verdict on the fork.** Facilitator for the build. Own the risk later if and only if the §12
-measurement comes back positive — and note that the two nearest risk-owning analogs in *this specific*
-niche, SCA Promotions and Sensible Weather, both cap in the tens of millions after decades.
+**Verdict on the fork.** We hold the risk. The merchant sees one price and no brokerage account.
+
+Stated honestly, that buys a better product and a worse compliance position, on purpose: the licensing
+and collateral cost is **purchasable and scheduled**, where the merchant-as-principal frictions are
+structural — an exchange term of service we cannot negotiate, plus a broker-registration question that
+bites the capital-light model specifically. Two things this verdict does **not** resolve: the two
+nearest risk-owning analogs in *this specific* niche, SCA Promotions and Sensible Weather, both cap in
+the tens of millions after decades; and until a license and fronting carrier are in place, running this
+at real scale with real merchant money is unlicensed insurance in substance. Pilot-scale and
+demonstration are not, which is what the near term actually is.
 
 ---
 
