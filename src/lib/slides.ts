@@ -34,18 +34,18 @@ export const ACTS = [
 ] as const;
 
 export const VOCABULARY_RULE = {
-  banned: [
-    "hedge",
-    "prediction market",
-    "position",
-    "expected value",
-    "variance",
-    "notional",
-    "underwrite",
+  heading: "The vocabulary rule",
+  principle:
+    "Use the real words — the audience is technical and euphemism reads as condescension. The rule is about ORDER, not vocabulary: show the mechanism, then name it. These terms are earned by the slide listed, and should not appear before it:",
+  earned: [
+    "contract — slide 7",
+    "odds / price — slide 8",
+    "hedging — slide 11",
+    "prediction market — slide 11",
   ],
-  why: "Not because the audience is unsophisticated, but because every one of them asks the listener to import a concept before they need it. The deck introduces exactly one object — a coupon (Slide 7) — and that object carries all the way through: on Slide 15 we say “we hold the coupons,” not “we hold the position.” That continuity does most of the from-zero work.",
+  why: "A name given before the thing it names is a concept the listener has to hold on credit. A name given after is a label for something they already understand, and it lands as recognition — which is why “that is what hedging is” belongs at slide 11, once the payoff table has shown both branches costing the same, and not at slide 7 where it would be a prerequisite. Said in the right order, the jargon is a service to the viewer; said early, it is a tax.",
   exception:
-    "The one concept that cannot be avoided is price equals odds, which is why it gets a slide to itself and an argument a listener can check against their own intuition (Slide 8).",
+    "One term stays out entirely: expected value. Not because it is too advanced, but because slide 5 already gives the same idea in counts — ten orders out of a hundred — and counts are easier to follow aloud than a term of art that means exactly the same thing.",
 };
 
 export const CUT_ORDER = [
@@ -185,7 +185,7 @@ export const SLIDES: Slide[] = [
       "Two columns, Yankees win it / they don't, five rows (the fifth is Our fee, −$200), both bottom lines reading −$2,326 — labelled “Total cost of the promo” — in the largest type on the slide.",
     ],
     narration:
-      "(three full seconds of silence) — then: “Either way: twenty-three twenty-six. Win or lose, the same number. The uncertainty is just gone.”",
+      "(three full seconds of silence) — then: “Either way: twenty-three twenty-six. Win or lose, the same number. The uncertainty is just gone.” — then, once the table has landed: “That is all hedging is. You are not betting on the Yankees. You are buying certainty about what this promotion costs.”",
     delivery:
       "The silence is not a stylistic flourish. The table resolves itself faster than narration can describe it, and talking over it competes with the only slide where reading is the point.",
     notOnScreen: ["Percentages, fee formulas, footnotes."],

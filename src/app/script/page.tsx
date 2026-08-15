@@ -47,13 +47,11 @@ export default function ScriptPage() {
 
       <section className="mt-12 rounded-card border border-ink/10 bg-surface p-6">
         <h2 className="text-lg font-semibold tracking-tight text-ink">
-          The vocabulary rule
+          {VOCABULARY_RULE.heading}
         </h2>
-        <p className="mt-3">
-          These words never appear, on screen or in narration:
-        </p>
+        <p className="mt-3">{VOCABULARY_RULE.principle}</p>
         <p className="mt-3 font-mono text-[14px] text-ink">
-          {VOCABULARY_RULE.banned.join(" · ")}
+          {VOCABULARY_RULE.earned.join(" · ")}
         </p>
         <p className="mt-3">{VOCABULARY_RULE.why}</p>
         <p className="mt-3">{VOCABULARY_RULE.exception}</p>
