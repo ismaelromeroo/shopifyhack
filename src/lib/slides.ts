@@ -145,7 +145,7 @@ export const SLIDES: Slide[] = [
     title: "$0 or $20,000",
     onScreen: ["The two figures, very large, with a gap between them."],
     narration:
-      "So why doesn't anyone do it? Because if it hits, you owe every customer at once. That promise costs you nothing — or twenty thousand dollars. That's not a marketing decision. That's a bet you can't afford to lose. And no ordinary store signs it.",
+      "So why doesn't anyone do it? Because if it hits you owe every customer at once, which makes that promise cost you either nothing or twenty thousand dollars — and a swing that size isn't a marketing decision, it's a bet you can't afford to lose. No ordinary store signs it.",
     notOnScreen: ["The word “variance.”"],
   },
   {
@@ -154,7 +154,7 @@ export const SLIDES: Slide[] = [
     title: "A contract that pays $1 if the Yankees win the World Series.",
     onScreen: ["A single drawn coupon object. Nothing else."],
     narration:
-      "Which is where this gets interesting. There's a contract that pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should it cost?",
+      "Which is where this gets interesting, because there's a contract that pays you one dollar if the Yankees win the World Series and nothing at all if they don't. What should it cost?",
     productionNote: MARKET_NOTE,
   },
   {
@@ -165,7 +165,7 @@ export const SLIDES: Slide[] = [
       "The coupon with a price stamped on it, pulled live from Kalshi, with a small “live · updated 2s ago” tag and the real ticker.",
     ],
     narration:
-      "Exactly the odds. A one-in-ten shot costs ten cents. Which means the price of the contract is the price of the promise.",
+      "Exactly the odds — a one-in-ten shot costs ten cents, which means the price of the contract is simply the price of the promise you're making.",
     delivery:
       "This is where you lose people or don't. It is the only genuine conceptual leap in the deck. It works out loud because the arbitrage argument (any cheaper and you'd buy every one) is checkable against ordinary haggling intuition and requires no finance. Do not rush it. Let the live price sit on screen while you say it.",
   },
@@ -177,7 +177,7 @@ export const SLIDES: Slide[] = [
       "The same contract from 7–8, shrunk to make room. Beneath it the two venue names, Kalshi weighted heavier because it is where the live price comes from.",
     ],
     narration:
-      "We buy them on Kalshi — a prediction market. Polymarket is the other one. That's the only moving part that lives outside your store.",
+      "We buy those on Kalshi, a prediction market, and Polymarket is the other one — and that's the only moving part in any of this that lives outside your store.",
     delivery:
       "Name the venue, do not explain the institution. The viewer does not need to know what a prediction market is, how it clears, or why the price is efficient — only where we buy the contracts and that it is one outside dependency. Anything more is a lecture the pitch does not need.",
     notOnScreen: ["Logos, volume figures, a regulatory explainer."],
@@ -188,7 +188,7 @@ export const SLIDES: Slide[] = [
     title: "20,000 contracts = $2,000",
     onScreen: ["The single coupon multiplies into a block; $2,000 beneath."],
     narration:
-      "So two thousand dollars buys you twenty thousand of them. Which means twenty thousand dollars shows up — but only if they win it.",
+      "So two thousand dollars buys you twenty thousand of them, which means twenty thousand dollars arrives — but only if they win it.",
   },
   {
     n: 11,
@@ -199,7 +199,7 @@ export const SLIDES: Slide[] = [
       "The coupon block on the left, a stack of customer refunds on the right, an equals sign between them.",
     ],
     narration:
-      "And that is exactly when you owe your customers twenty thousand dollars. The money arrives at the same moment the bill does.",
+      "And that is exactly when you owe your customers twenty thousand dollars, so the money arrives at the same moment the bill does.",
     delivery:
       "The load-bearing sentence of the entire deck. If a listener retains one line, it is “the money arrives at the same moment the bill does.” Make it the slowest sentence in the recording. Everything before it is setup; everything after it is bookkeeping.",
   },
@@ -211,7 +211,7 @@ export const SLIDES: Slide[] = [
       "Two columns, Yankees win it / they don't, five rows (the fifth is Our fee, −$200), both bottom lines reading −$2,326 — labelled “Total cost of the promo” — in the largest type on the slide.",
     ],
     narration:
-      "(three full seconds of silence) — then: “Either way: twenty-three twenty-six. Win or lose, the same number. The uncertainty is just gone.” — then, once the table has landed: “That is all hedging is. You are not betting on the Yankees. You are buying certainty about what this promotion costs.”",
+      "(three full seconds of silence) — then: “Either way, twenty-three twenty-six — win or lose, the same number, and the uncertainty is simply gone.” — then, once the table has landed: “That's all hedging is: you're not betting on the Yankees, you're buying certainty about what this promotion costs.”",
     delivery:
       "The silence is not a stylistic flourish. The table resolves itself faster than narration can describe it, and talking over it competes with the only slide where reading is the point.",
     notOnScreen: ["Percentages, fee formulas, footnotes."],
@@ -225,7 +225,7 @@ export const SLIDES: Slide[] = [
     onScreen: [
       "The two offers, side by side, with an equals sign between them — the same equality slide 3 set up, now earned.",
     ],
-    narration: "Which means the merchant isn't deciding whether to spend the money. He's already spending it. He's deciding what shape it takes.",
+    narration: "Which means the merchant isn't deciding whether to spend the money — he's already spending it — he's deciding what shape it takes.",
     productionNote:
       "Per Victor's review 2026-08-15: the deck no longer advertises the premium here. On screen it now reads “10% off = 1-in-10 free” — reiterating that this is the same discount, reshaped — while the narration line stays as written.",
   },
@@ -237,7 +237,7 @@ export const SLIDES: Slide[] = [
       "The figure alone, very large. Small label beneath: “what one furniture store sold on one of these.”",
     ],
     narration:
-      "Does anyone actually talk about these? At the extreme — a Houston furniture store ran exactly this promise on the World Series and sold seventy-five million dollars of furniture. It made national news twice: when he promised it, and when everyone got paid. Nobody has ever written a headline about ten percent off.",
+      "Does anyone actually talk about these? At the extreme, a Houston furniture store ran exactly this promise on the World Series and sold seventy-five million dollars of furniture, making national news twice: once when he promised it, and again when everyone got paid. Nobody has ever written a headline about ten percent off.",
     delivery:
       "Source: Mattress Mack, Gallery Furniture, 2022 World Series — ~$75M in promo-driven sales (Forbes, Nov 2022). Be ready for the follow-up: by his own account the promo itself was roughly a wash on margin — the return was the attention. That is the point, not a weakness: this is the only promotion type with a documented case of making national news.",
     notOnScreen: ["The source citation, his name, a photo."],
@@ -252,7 +252,7 @@ export const SLIDES: Slide[] = [
       "Screen recording of the merchant console — the live market picker, each row priced off its own book, thin books refused inline, then the all-in quote on the selected row.",
     ],
     narration:
-      "So here's what we built. Every event that can actually be covered, priced off the live market. Pick one, and you get a single number before you commit — what it costs, and what that is as a plain sale. The ones that can't be covered, it says so.",
+      "So here's what we built: every event that can actually be covered, priced off the live market, so you pick one and get a single number before you commit — what it costs, and what that same money is as a plain sale. The ones we can't cover, it tells you.",
     delivery:
       "The narration must match the picker, not a text box. The refusals are visible on screen as rows are priced, so the last clause is describing something the viewer can see rather than a claim.",
     productionNote:
@@ -266,7 +266,7 @@ export const SLIDES: Slide[] = [
       "Continuation — click go, orders arrive, the liability and coverage lines tracking each other.",
     ],
     narration:
-      "They click go. They never open an account, never place a trade. We hold the contracts, and we pay the refunds.",
+      "They click go, and from there they never open an account and never place a trade — we hold the contracts, and we pay the refunds.",
     delivery:
       "Note the word choice: coupons, not position. Slide 7's object is still doing work eight slides later.",
   },
@@ -278,7 +278,7 @@ export const SLIDES: Slide[] = [
       "The claim ticket, mobile, live odds ticking. Then settlement: “The Yankees won. Your order was free.”",
     ],
     narration:
-      "And the customer gets this. Their order, riding on the Yankees, with live odds. And when it hits — the Yankees won, your order was free. A hundred customers just became a hundred people telling that story.",
+      "And the customer gets this: their order, riding on the Yankees, with live odds — and when it hits, the Yankees won, your order was free. A hundred customers just became a hundred people telling that story.",
     delivery:
       "The last sentence is the word-of-mouth payoff — land it after the settlement flip, not over it.",
     productionNote:
@@ -290,7 +290,7 @@ export const SLIDES: Slide[] = [
     title: "three lines",
     onScreen: ["Promo budget $2,000 · Exchange fee $126 · Our fee $200 (bold)."],
     narration:
-      "We make money the way the exchange does: a management fee on the coverage. Ten percent of the promo budget they were already spending.",
+      "We make money the way the exchange does, with a management fee on the coverage — ten percent of the promo budget they were already spending.",
     notOnScreen: ["ARR projections, TAM, a market-size chart."],
   },
   {
@@ -301,7 +301,7 @@ export const SLIDES: Slide[] = [
       "“+5” very large; beneath it, a row of 100 order dots with the last five filling in. Label: “in 100 orders.”",
     ],
     narration:
-      "So here's the bet, made precise. With every fee in, this beats the flat sale it replaces if it sells five more orders in a hundred. That's the whole bar. And you don't take it on faith — every campaign runs with a built-in holdout, half the traffic keeps the plain sale, so your first promo measures its own lift against the discount you would have run anyway.",
+      "So here's the bet, made precise: with every fee in, this beats the flat sale it replaces if it sells five more orders in a hundred, and that's the whole bar. You don't take it on faith either — every campaign runs with a built-in holdout, half the traffic keeps the plain sale, so your first promo measures its own lift against the discount you'd have run anyway.",
     delivery:
       "The figure is the required behavioral edge from docs/01-math.md §8: ~3.4% extra units to tie with exchange friction only, ~5% with our 10%-of-premium fee included (docs/05-pitch.md, “What has to be true”). If pressed: nobody has ever measured this properly, which is exactly why the holdout ships on by default — the first campaign answers it with the merchant's own numbers.",
     notOnScreen: ["The percent sign, the formula, the word “lift.”"],
