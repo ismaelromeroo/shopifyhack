@@ -1,6 +1,22 @@
 # 01 — Business Math: Unit Economics & the Hedging Model
 
-**Date:** 2026-07-21
+> ## ⚠️ SUPERSEDED — do not cite
+>
+> This July draft has been **replaced by [`01-math.md`](01-math.md)**. It is retained only for
+> provenance. It contains at least three claims the current docs correct, catalogued in
+> [`04-adversarial-review.md`](04-adversarial-review.md) § *Corrections to our own published docs*:
+>
+> - **§C's "prize indemnity charges ~2–3× fair value" is not supported** — the 3–15% band is
+>   probability-indexed, not a flat load.
+> - **§D's "a $6,000 promo generates ~$1,800 of hedged notional" is an arithmetic error** — at
+>   `p` = 0.10 the premium is `L·p` = **$600**, as §B of this same document correctly computes.
+>   Everything downstream of it in §D (the ~$180/promo and ~550,000-promos figures) inherits the error.
+> - **The "SCA ≈ $40M revenue" ceiling is unverified** — two unaudited scrapes disagree by ~2×.
+>
+> For current unit economics, fees, drag, break-even lift and facilitator P&L, read
+> [`01-math.md`](01-math.md).
+
+**Date:** 2026-07-21 · **Status:** superseded by [`01-math.md`](01-math.md)
 **Scope:** The complete model behind [`00-thesis.md`](00-thesis.md) — promo unit economics, the Kalshi
 hedge mechanics, the facilitator's own P&L, why revenue caps at a niche, the store-credit variant, and
 the insurer endgame. One consistent notation throughout.
