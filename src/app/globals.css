@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Design tokens ──────────────────────────────────────────────────────
+   Monochrome, light. A warm neutral greyscale ramp; no hue anywhere.
+   Two radii. Layered shadows keyed to one light source (above, slightly
+   left), tight+dark near the surface, wide+faint beyond. */
+
+@theme {
+  --color-paper: #f6f6f4;
+  --color-surface: #ffffff;
+  --color-ink: #161614;
+
+  --color-g100: #f2f2f0;
+  --color-g150: #ebebe8;
+  --color-g200: #e2e2df;
+  --color-g300: #d0d0cc;
+  --color-g400: #acaca7;
+  --color-g500: #87877f;
+  --color-g600: #676760;
+  --color-g700: #4a4a46;
+  --color-g800: #32322f;
+  --color-g900: #21211f;
+
+  --radius-card: 14px;
+  --radius-ctl: 7px;
+
+  --shadow-card:
+    0 1px 1px rgba(22, 22, 20, 0.03),
+    0 2px 4px rgba(22, 22, 20, 0.03),
+    0 6px 14px rgba(22, 22, 20, 0.04),
+    0 16px 32px rgba(22, 22, 20, 0.03);
+  --shadow-raised:
+    0 1px 1px rgba(22, 22, 20, 0.05),
+    0 3px 6px rgba(22, 22, 20, 0.05),
+    0 10px 22px rgba(22, 22, 20, 0.06),
+    0 30px 60px rgba(22, 22, 20, 0.07);
+  --shadow-pressed:
+    0 1px 1px rgba(22, 22, 20, 0.04),
+    0 2px 5px rgba(22, 22, 20, 0.05);
+
+  /* modular scale, ~1.24, base 14 */
+  --text-caption: 11px;
+  --text-caption--line-height: 16px;
+  --text-caption--letter-spacing: 0.005em;
+  --text-label: 10.5px;
+  --text-label--line-height: 14px;
+  --text-label--letter-spacing: 0.08em;
+  --text-body: 14px;
+  --text-body--line-height: 21px;
+  --text-title: 17px;
+  --text-title--line-height: 24px;
+  --text-title--letter-spacing: -0.006em;
+  --text-h: 21px;
+  --text-h--line-height: 28px;
+  --text-h--letter-spacing: -0.01em;
+  --text-d3: 27px;
+  --text-d3--line-height: 32px;
+  --text-d3--letter-spacing: -0.012em;
+  --text-d2: 34px;
+  --text-d2--line-height: 38px;
+  --text-d2--letter-spacing: -0.016em;
+  --text-d1: 54px;
+  --text-d1--line-height: 56px;
+  --text-d1--letter-spacing: -0.02em;
+  --text-d0: 68px;
+  --text-d0--line-height: 70px;
+  --text-d0--letter-spacing: -0.022em;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* tabular, lining numerals — every figure that updates uses this */
+@utility tnum {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* glass: only where a panel genuinely floats over content */
+@utility glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(22, 22, 20, 0.08);
+}
+
+/* small-caps section label */
+@utility caps-label {
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  letter-spacing: var(--text-label--letter-spacing);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+  ::selection {
+    background: var(--color-g200);
+  }
+  :focus-visible {
+    outline: 2px solid rgba(22, 22, 20, 0.35);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* live-dot pulse: a consequence of a poll landing, not decoration */
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 22, 20, 0.28);
+  }
+  100% {
+    box-shadow: 0 0 0 7px rgba(22, 22, 20, 0);
+  }
+}
+.live-dot-pulse {
+  animation: live-pulse 700ms cubic-bezier(0.2, 0.6, 0.3, 1) 1;
+}
+
+/* value refresh: a one-shot background wash when a live number changes */
+@keyframes value-wash {
+  0% {
+    background-color: rgba(22, 22, 20, 0.07);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.value-wash {
+  animation: value-wash 900ms ease-out 1;
+  border-radius: 4px;
+}
+
+/* ─── Deck-only utilities (src/components/deck) ──────────────────────────
+   Background layers for /deck: a fine grid drifting exactly one cell per
+   loop (seamless), two grey clouds crossing slower still, static paper
+   grain. Felt, not seen. */
+
+.deck-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-ink) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-ink) 4%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+  animation: deck-grid-drift 120s linear infinite;
+}
+
+@keyframes deck-grid-drift {
+  to {
+    transform: translate3d(64px, 64px, 0);
+  }
+}
+
+.deck-halo {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--color-ink) 4%, transparent),
+    transparent 72%
+  );
+  animation: deck-halo-drift 67s ease-in-out infinite alternate;
+}
+
+.deck-halo-b {
+  animation-duration: 89s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes deck-halo-drift {
+  from {
+    transform: translate(-7%, -4%);
+  }
+  to {
+    transform: translate(7%, 5%);
+  }
+}
+
+.deck-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
+
+/* zero chrome: /deck hides the cursor after 2s idle */
+.cursor-hidden,
+.cursor-hidden * {
+  cursor: none !important;
 }
