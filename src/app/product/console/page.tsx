@@ -2,16 +2,20 @@
 import { useState } from "react";
 import NumberFlow from "@number-flow/react";
 import { ArrowRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { Panel, PanelLabel, SimTag } from "@/components/chrome";
 import { BookPanel } from "@/components/book-panel";
 import { Verdict } from "@/components/verdict";
 import { ProductMarketMenu } from "@/components/product/market-menu";
+import { OrdersChart } from "@/components/product/orders-chart";
+import { EASE } from "@/components/deck/primitives";
 import { useProductQuote, isLive, type ProductQuotePayload } from "@/lib/product/use-quote";
 import { fmtMoney } from "@/lib/format";
 import type { Campaign } from "@/lib/product/campaign-store";
 import type { MarketCandidate } from "@/lib/payload";
 
 export default function ProductConsolePage() {
+  const rm = useReducedMotion();
   const [selection, setSelection] = useState<{ ticker: string; sentence: string } | null>(null);
   const [orders, setOrders] = useState(100);
   const [aov, setAov] = useState(200);
@@ -101,7 +105,12 @@ export default function ProductConsolePage() {
           )}
 
           {data && phase === "quoted" && (
-            <>
+            <motion.div
+              initial={rm ? false : { y: 8 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: rm ? 0 : 0.5, ease: EASE }}
+              className="space-y-5"
+            >
               <Panel className="p-6">
                 <div className="flex items-center justify-between">
                   <PanelLabel>Pays out against</PanelLabel>
@@ -131,7 +140,7 @@ export default function ProductConsolePage() {
                   </button>
                 </div>
               )}
-            </>
+            </motion.div>
           )}
 
           {campaign && phase === "running" && (
@@ -150,7 +159,13 @@ export default function ProductConsolePage() {
         </div>
 
         {data && (
-          <BookPanel data={data} live={live} receivedAt={q.receivedAt} tick={q.tick} />
+          <motion.div
+            initial={rm ? false : { y: 8 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: rm ? 0 : 0.5, delay: rm ? 0 : 0.15, ease: EASE }}
+          >
+            <BookPanel data={data} live={live} receivedAt={q.receivedAt} tick={q.tick} />
+          </motion.div>
         )}
       </div>
     </main>
@@ -284,6 +299,11 @@ function RunningPanel({
             </div>
           </div>
         </div>
+        <OrdersChart
+          running={!settled}
+          ordersTarget={campaign.ordersTarget}
+          aov={campaign.aovCents / 100}
+        />
       </Panel>
 
       {!settled && !full && (

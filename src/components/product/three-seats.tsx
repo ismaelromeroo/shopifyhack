@@ -1,3 +1,8 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "@/components/deck/primitives";
+
 const SEATS = [
   {
     who: "Visitor",
@@ -17,19 +22,28 @@ const SEATS = [
 ] as const;
 
 export function ThreeSeats() {
+  const rm = useReducedMotion();
   return (
     <div>
       <p className="caps-label text-g500">Three seats</p>
       <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {SEATS.map((s) => (
-          <div
+        {SEATS.map((s, i) => (
+          <motion.div
             key={s.who}
+            initial={rm ? false : { y: 7 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              delay: rm ? 0 : 0.25 + i * 0.32,
+              duration: 0.55,
+              ease: EASE,
+            }}
             className="rounded-card border border-ink/[0.07] bg-surface p-6 shadow-card"
           >
             <div className="text-title font-semibold">{s.who}</div>
             <p className="mt-1 font-mono text-caption text-g400">{s.path}</p>
             <p className="mt-4 text-body text-g700">{s.copy}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
