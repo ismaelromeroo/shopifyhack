@@ -62,9 +62,10 @@ the pitch.
 
 | Doc | What it covers |
 |---|---|
+| [**`docs/05-pitch.md`**](docs/05-pitch.md) | **Start here.** The argument in the order it should be told — problem, idea, the cost equivalence, the mechanism, the product, the fee, and what has to be true |
 | [`docs/00-thesis.md`](docs/00-thesis.md) | The argument derived from first principles in six steps: every merchant discounts → discounting buys three bad things → same budget, different shape → why nobody can promise it → buy the other side → the price is the discount you already run. Plus seven falsifiable conditions, bottom-up sizing, and the verdict |
 | [`docs/01-math.md`](docs/01-math.md) | The complete quantitative model on one running example: Kalshi's fee formula reproduced against all 15 published rows, the drag closed form `0.07(1−p) + (s/2)/p`, break-even lift, the required behavioral edge `e`, liquidity and position limits, facilitator P&L, sensitivity ranking |
-| [`docs/02-business.md`](docs/02-business.md) | The commercial layer: the reallocation sale, product surface on Shopify, facilitator-vs-underwriter fork, pricing against the merchant's own discount, adoption as the central risk, beachhead, moat, competitors, the compliant architecture |
+| [`docs/02-business.md`](docs/02-business.md) | The commercial layer: the reallocation sale, product surface, why we hold the risk rather than broker it, pricing against the merchant's own discount, adoption as the central risk, beachhead, moat, competitors |
 | [`docs/03-venture-scale.md`](docs/03-venture-scale.md) | The venture case against our own earlier kill — comparable sets, what the $1B outcomes actually own, bottom-up sizing that refuses TAM-by-adjacency, and eight conditions graded against evidence |
 | [`docs/04-adversarial-review.md`](docs/04-adversarial-review.md) | The strongest case *against* the business, assembled by its own authors — six attacks on the new frame, seven structural dependencies, and public corrections to claims we previously published |
 
