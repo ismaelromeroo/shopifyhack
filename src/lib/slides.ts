@@ -48,6 +48,19 @@ export const VOCABULARY_RULE = {
     "One term stays out entirely: expected value. Not because it is too advanced, but because slide 5 already gives the same idea in counts — ten orders out of a hundred — and counts are easier to follow aloud than a term of art that means exactly the same thing.",
 };
 
+/**
+ * Who speaks what. Splits fall on act boundaries and never inside an animated
+ * build (3→4, 9→10, 14→15) — a voice change mid-composition reads as an edit
+ * error. Voice 2 deliberately holds 7–10 whole: that is the contract sequence
+ * and the spine of the argument.
+ */
+export const VOICES = [
+  { n: 1, from: 1, to: 5, time: "0:00–1:20", covers: "The problem and the idea" },
+  { n: 2, from: 6, to: 10, time: "1:20–2:50", covers: "Why nobody does it, and the mechanism" },
+  { n: 3, from: 11, to: 15, time: "2:50–4:00", covers: "The payoff, the proof, the product" },
+  { n: 4, from: 16, to: 19, time: "4:00–5:05", covers: "The customer, the model, the close" },
+] as const;
+
 export const CUT_ORDER = [
   "Slide 5 (`It's the same discount`) — fold into Slide 4's narration. Saves ~15s, loses the least.",
   "Slide 2 — fold into Slide 1.",

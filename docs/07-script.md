@@ -1,15 +1,15 @@
 # 07 — Script
 
-Spoken words only. Delivery notes, staging and reasoning live in
+Spoken words only. Staging, delivery notes and reasoning live in
 [`06-slide-plan.md`](06-slide-plan.md); this file is for the person at the microphone.
 
-**Generated from `src/lib/slides.ts`.** Do not hand-edit.
+**Generated from `src/lib/slides.ts`.** Do not hand-edit. Also rendered at `/script`.
 
-Four voices. Splits fall on act boundaries and never inside an animated build
+19 slides · ~5:05 · four voices. Splits fall on act boundaries and never inside an animated build
 (3→4, 9→10, 14→15 each stay with one voice).
 
----
 
+---
 
 ## Voice 1 — slides 1–5 · 0:00–1:20
 
@@ -46,7 +46,6 @@ Four voices. Splits fall on act boundaries and never inside an animated build
 > All that changed is where it lands: everything on one customer, instead of a little on everyone.
 
 ---
-
 
 ## Voice 2 — slides 6–10 · 1:20–2:50
 
@@ -87,7 +86,6 @@ Four voices. Splits fall on act boundaries and never inside an animated build
 > The money arrives at the same moment the bill does.
 
 ---
-
 
 ## Voice 3 — slides 11–15 · 2:50–4:00
 
@@ -130,7 +128,6 @@ Four voices. Splits fall on act boundaries and never inside an animated build
 
 ---
 
-
 ## Voice 4 — slides 16–19 · 4:00–5:05
 
 *The customer, the model, the close*
@@ -158,5 +155,3 @@ Four voices. Splits fall on act boundaries and never inside an animated build
 **19** · `closing card`
 
 > Covered.
-
----
