@@ -185,7 +185,7 @@ export const SLIDES: Slide[] = [
       "Two columns, Yankees win it / they don't, five rows (the fifth is Our fee, −$200), both bottom lines reading −$2,326 — labelled “Total cost of the promo” — in the largest type on the slide.",
     ],
     narration:
-      "(three full seconds of silence) — then: “Either way: twenty-one twenty-six. Win or lose, the same number. The uncertainty is just gone.”",
+      "(three full seconds of silence) — then: “Either way: twenty-three twenty-six. Win or lose, the same number. The uncertainty is just gone.”",
     delivery:
       "The silence is not a stylistic flourish. The table resolves itself faster than narration can describe it, and talking over it competes with the only slide where reading is the point.",
     notOnScreen: ["Percentages, fee formulas, footnotes."],
@@ -235,7 +235,7 @@ export const SLIDES: Slide[] = [
   {
     n: 15,
     act: ACTS[4],
-    title: "They never see a contract.",
+    title: "They never place a trade.",
     onScreen: [
       "Continuation — click go, orders arrive, the liability and coverage lines tracking each other.",
     ],
@@ -289,8 +289,7 @@ export const SLIDES: Slide[] = [
     onScreen: [
       "Product name, one line, the live Kalshi tag still running in the corner.",
     ],
-    narration:
-      "“[Name]. Turn your discount into something worth talking about.” Then stop talking.",
+    narration: "Covered.",
     productionNote:
       "The deck renders the product name as “Covered” with the tagline “Discounts worth talking about”; per Victor's review 2026-08-15 the corner live tag was removed from this slide. Change either in one place: SceneClose in src/components/deck/scenes-b.tsx.",
   },
