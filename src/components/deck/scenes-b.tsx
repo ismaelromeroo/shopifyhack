@@ -8,8 +8,8 @@ import { EASE } from "./primitives";
    point; asynchronous arrival would destroy it. */
 const ROWS: [string, string, string][] = [
   ["Refunds paid to customers", "−$20,000", "$0"],
-  ["The coupons pay", "+$20,000", "$0"],
-  ["20,000 coupons, bought upfront", "−$2,000", "−$2,000"],
+  ["The contracts pay", "+$20,000", "$0"],
+  ["20,000 contracts, bought upfront", "−$2,000", "−$2,000"],
   ["Exchange fee, paid upfront", "−$126", "−$126"],
   ["Our fee, paid upfront", "−$200", "−$200"],
 ];

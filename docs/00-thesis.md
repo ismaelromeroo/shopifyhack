@@ -137,9 +137,10 @@ Buy 20,000 YES contracts at $0.10 — one contract per dollar of liability, so p
 | Hedge payout | **+$20,000** | $0 |
 | Premium (paid upfront) | −$2,000 | −$2,000 |
 | Kalshi fee (paid upfront) | −$126 | −$126 |
-| **Net cost to merchant** | **−$2,126** | **−$2,126** |
+| Our management fee (10% of premium) | −$200 | −$200 |
+| **Total cost to merchant** | **−$2,326** | **−$2,326** |
 
-**$2,000 flat versus $2,126 contingent. A 6.3% premium over the discount they are already paying for.**
+**$2,000 flat versus $2,326 all-in. A 16.3% premium over the discount they are already paying for** — of which 6.3 points is exchange friction and 10 points is our fee.
 Closed form for the all-in cost of $1 of refund coverage, at trigger probability `p`:
 **`p + 0.07·p·(1−p)`** — 10.630¢ at `p` = 0.10. (Kalshi states its own fee formula with `P` for the
 contract's *price*; on this rail price and probability are the same number, which is the point.)

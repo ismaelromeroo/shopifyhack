@@ -37,7 +37,6 @@ export const VOCABULARY_RULE = {
   banned: [
     "hedge",
     "prediction market",
-    "contract",
     "position",
     "expected value",
     "variance",
@@ -139,10 +138,10 @@ export const SLIDES: Slide[] = [
   {
     n: 7,
     act: ACTS[3],
-    title: "A coupon worth $1 if the Yankees win the World Series.",
+    title: "A contract that pays $1 if the Yankees win the World Series.",
     onScreen: ["A single drawn coupon object. Nothing else."],
     narration:
-      "Which is where this gets interesting. Picture a coupon. It pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should that coupon cost?",
+      "Which is where this gets interesting. There's a contract that pays you one dollar if the Yankees win the World Series, and nothing if they don't. What should it cost?",
     productionNote: MARKET_NOTE,
   },
   {
@@ -153,17 +152,17 @@ export const SLIDES: Slide[] = [
       "The coupon with a price stamped on it, pulled live from Kalshi, with a small “live · updated 2s ago” tag and the real ticker.",
     ],
     narration:
-      "Exactly the odds. If the Yankees are a one-in-ten shot, it's worth ten cents. Any cheaper and you'd buy every one you could find. Any more and you'd sell them. And this isn't hypothetical — that's a real market, and that's the real price, right now.",
+      "Exactly the odds. If the Yankees are a one-in-ten shot, it's worth ten cents. Any cheaper and you'd buy every one you could find. Any more and you'd sell them. That's a real market, and that's the real price, right now.",
     delivery:
       "This is where you lose people or don't. It is the only genuine conceptual leap in the deck. It works out loud because the arbitrage argument (any cheaper and you'd buy every one) is checkable against ordinary haggling intuition and requires no finance. Do not rush it. Let the live price sit on screen while you say it.",
   },
   {
     n: 9,
     act: ACTS[3],
-    title: "20,000 coupons = $2,000",
+    title: "20,000 contracts = $2,000",
     onScreen: ["The single coupon multiplies into a block; $2,000 beneath."],
     narration:
-      "So two thousand dollars buys you twenty thousand of those coupons. Which means twenty thousand dollars shows up — but only if the Yankees make it.",
+      "So two thousand dollars buys you twenty thousand of them. Which means twenty thousand dollars shows up — but only if they win it.",
   },
   {
     n: 10,
@@ -183,7 +182,7 @@ export const SLIDES: Slide[] = [
     act: ACTS[3],
     title: "the payoff table (the one dense slide)",
     onScreen: [
-      "Two columns, Yankees make it / they don't, four rows, both bottom lines reading −$2,126 in the largest type on the slide.",
+      "Two columns, Yankees win it / they don't, five rows (the fifth is Our fee, −$200), both bottom lines reading −$2,326 — labelled “Total cost of the promo” — in the largest type on the slide.",
     ],
     narration:
       "(three full seconds of silence) — then: “Either way: twenty-one twenty-six. Win or lose, the same number. The uncertainty is just gone.”",
@@ -196,11 +195,11 @@ export const SLIDES: Slide[] = [
   {
     n: 12,
     act: ACTS[3],
-    title: "$2,000 → $2,126",
+    title: "10% off = 1-in-10 free",
     onScreen: [
-      "The flat-discount price and the contingent price, side by side, arrow between.",
+      "The two offers, side by side, with an equals sign between them — the same equality slide 3 set up, now earned.",
     ],
-    narration: "Against the two-thousand-dollar sale he was already running.",
+    narration: "Which means the merchant isn't deciding whether to spend the money. He's already spending it. He's deciding what shape it takes.",
     productionNote:
       "Per Victor's review 2026-08-15: the deck no longer advertises the premium here. On screen it now reads “10% off = 1-in-10 free” — reiterating that this is the same discount, reshaped — while the narration line stays as written.",
   },
@@ -241,7 +240,7 @@ export const SLIDES: Slide[] = [
       "Continuation — click go, orders arrive, the liability and coverage lines tracking each other.",
     ],
     narration:
-      "They click go. They never open an account, never place a trade, never see a contract. We hold the coupons, and we pay the refunds.",
+      "They click go. They never open an account, never place a trade. We hold the contracts, and we pay the refunds.",
     delivery:
       "Note the word choice: coupons, not position. Slide 7's object is still doing work eight slides later.",
   },

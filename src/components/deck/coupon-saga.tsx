@@ -144,7 +144,7 @@ export function CouponSaga({ n }: { n: number }) {
             animate={{ scale: resolved ? 0.74 : 1 }}
             className="flex flex-col items-center gap-[2.6vmin]"
           >
-            <div className="text-[2.2vmin] text-g500">20,000 coupons</div>
+            <div className="text-[2.2vmin] text-g500">20,000 contracts</div>
             <div
               className="grid"
               style={{

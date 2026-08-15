@@ -236,7 +236,7 @@ function OrdersChart({ running }: { running: boolean }) {
       </svg>
       <div className="flex justify-between font-mono text-[1.6vmin] text-g500">
         <span>grey: refunds owed if it hits</span>
-        <span>black: coupons we hold</span>
+        <span>black: contracts we hold</span>
       </div>
     </div>
   );
@@ -372,7 +372,7 @@ export function ConsoleScene({ n }: { n: 14 | 15 }) {
                 </span>
                 <span className="tnum text-g500">
                   {" "}
-                  · {fmtInt(contracts(restingC100))} coupons resting ·{" "}
+                  · {fmtInt(contracts(restingC100))} contracts resting ·{" "}
                   {feasible ? "covers 20,000 ✓" : "too thin — blocked"}
                 </span>
               </motion.div>
@@ -405,7 +405,7 @@ export function ConsoleScene({ n }: { n: 14 | 15 }) {
                   </AnimatePresence>
                 </div>
                 <div className="tnum mt-[0.4vmin] text-[1.9vmin] text-g600">
-                  coupons {fmtMoney(premium, { round: true })} · exchange fee{" "}
+                  contracts {fmtMoney(premium, { round: true })} · exchange fee{" "}
                   {fmtMoney(exchangeFee, { round: true })} · our fee{" "}
                   {fmtMoney(ourFee, { round: true })}
                 </div>

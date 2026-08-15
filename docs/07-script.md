@@ -79,15 +79,15 @@ as an observation rather than an argument.**
 
 ---
 
-### 7 · `A coupon worth $1 if the Yankees win the World Series.` — 1:40
+### 7 · `A contract that pays $1 if the Yankees win the World Series.` — 1:40
 
 > Which is where this gets interesting.
 >
-> Picture a coupon.
-> It pays you one dollar if the Yankees win the World Series,
+> There's a contract that pays you one dollar
+> if the Yankees win the World Series,
 > and nothing if they don't.
 >
-> What should that coupon cost?
+> What should it cost?
 
 ---
 
@@ -99,16 +99,16 @@ as an observation rather than an argument.**
 > Any cheaper and you'd buy every one you could find.
 > Any more and you'd sell them.
 >
-> And this isn't hypothetical —
-> that's a real market, and that's the real price, right now.
+> That's a real market,
+> and that's the real price, right now.
 
 **The only conceptual leap in the deck. Slow down. Let the live price sit on screen while you say it.**
 
 ---
 
-### 9 · `20,000 coupons = $2,000` — 2:15
+### 9 · `20,000 contracts = $2,000` — 2:15
 
-> So two thousand dollars buys you twenty thousand of those coupons.
+> So two thousand dollars buys you twenty thousand of them.
 >
 > Which means twenty thousand dollars shows up —
 > but only if they win it.
@@ -129,7 +129,7 @@ as an observation rather than an argument.**
 
 > *(three full seconds of silence)*
 >
-> Either way: twenty-one twenty-six.
+> Either way: twenty-three twenty-six.
 > Win or lose, the same number.
 >
 > The uncertainty is just gone.
@@ -138,9 +138,13 @@ as an observation rather than an argument.**
 
 ---
 
-### 12 · `$2,000 → $2,126` — 3:05
+### 12 · `10% off = 1-in-10 free` — 3:05
 
-> Against the two-thousand-dollar sale he was already running.
+> Which means the merchant isn't deciding
+> whether to spend the money.
+>
+> He's already spending it.
+> He's deciding what shape it takes.
 
 ---
 
@@ -165,8 +169,8 @@ screen as rows price, so the last line describes what the viewer is watching.**
 
 > They click go.
 >
-> They never open an account, never place a trade, never see a contract.
-> We hold the coupons, and we pay the refunds.
+> They never open an account, never place a trade.
+> We hold the contracts, and we pay the refunds.
 
 ---
 
@@ -203,10 +207,10 @@ screen as rows price, so the last line describes what the viewer is watching.**
 - **Record the visuals silent first, then voice over them.** Narrating live while clicking produces
   dead air and fumbling; separating the two is the single largest quality gain available for no extra
   work.
-- **The words that never appear** — *hedge, prediction market, contract, position, expected value,
-  variance* — are absent on purpose. One object is introduced (the coupon, slide 7) and it carries
-  through to slide 14's *"we hold the coupons."* If a re-record drifts back into finance vocabulary,
-  the from-zero property is lost.
+- **The words that never appear** — *hedge, prediction market, position, expected value, variance,
+  notional, underwrite* — are absent on purpose. The instrument is called a **contract**, plainly, and
+  that one word carries from slide 7 through to slide 15's *"we hold the contracts."* The rule bans the
+  jargon *around* the instrument, not its name.
 - **Three pauses are written into the script and all three are load-bearing:** slide 4 before speaking,
   slide 10's slowed delivery, slide 11's three seconds of silence.
 - If it runs long, cut slide 5 and fold its objection-naming onto the end of slide 4. Saves ~15
