@@ -5,7 +5,7 @@ Spoken words only. Staging, delivery notes and reasoning live in
 
 **Generated from `src/lib/slides.ts`.** Do not hand-edit. Also rendered at `/script`.
 
-20 slides · ~5:23 · four voices. Splits fall on act boundaries and never inside an animated build
+20 slides · ~5:20 · four voices. Splits fall on act boundaries and never inside an animated build
 (3→4, 10→11, 15→16 each stay with one voice).
 
 Voice 1 is deliberately clipped — short declaratives, because the opening has to land fast. Voices 2–4
@@ -131,8 +131,8 @@ staccato list, and the contrast is what makes the opening feel like an opening.
 
 **19** · `+5 in 100`
 
-> So here's the bet, made precise: with every fee in, this beats the flat sale it replaces if it sells five more orders in a hundred, and that's the whole bar.
-> You don't take it on faith either — every campaign runs with a built-in holdout, half the traffic keeps the plain sale, so your first promo measures its own lift against the discount you'd have run anyway.
+> Sell five more orders in a hundred and the fees are paid for.
+> That's the whole bar — and you don't take it on faith, because every campaign runs a holdout, so your first promo measures itself against the sale you'd have run anyway.
 
 **20** · `closing card`
 
