@@ -40,9 +40,6 @@ and approximate — they assume the pauses are actually held.*
 
 ### 4 · `$2,000 / $2,000` — 0:50
 
-> Here's the part that surprised us.
-> Those two cost the same.
->
 > A hundred orders, two hundred dollars each.
 > Ten percent off is two thousand dollars.
 > And a one-in-ten chance of giving an order away — also two thousand.
@@ -55,14 +52,17 @@ and approximate — they assume the pauses are actually held.*
 
 ### 5 · `It's the same discount.` — 1:10
 
-> That's the objection everyone's about to have,
-> so let's not dodge it.
+> One order in ten goes free.
+> So across a hundred orders, you've given away ten of them —
+> that's the same ten percent.
 >
-> And it's exactly the point —
-> nobody has ever repeated a ten-percent-off sale.
-> Somebody repeats this one.
+> All that changed is where it lands:
+> everything on one customer,
+> instead of a little on everyone.
 
-**The sentence is on screen; do not read it. The screen makes the claim, you name it as the objection.**
+**Explain, never defend. Give the equivalence in counts, not percentages — "ten out of a hundred" is far
+easier to follow aloud than "a 10% chance." The last clause names the real difference, concentration,
+as an observation rather than an argument.**
 
 ---
 

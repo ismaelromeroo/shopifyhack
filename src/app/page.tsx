@@ -24,7 +24,7 @@ export default function Home() {
           <div>
             <div className="text-title font-semibold">The deck</div>
             <p className="mt-1.5 text-caption text-g600">
-              17 slides, ~4:30 narrated. Advance with → or space; the script lives
+              19 slides, ~5:05 narrated. Advance with → or space; the script lives
               at /script.
             </p>
           </div>

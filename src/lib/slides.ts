@@ -22,13 +22,15 @@ export interface Slide {
   productionNote?: string;
 }
 
+// Acts I–IV keep the plan's timings; V and VI absorb the two slides added
+// on 2026-08-15 (13: $75M, +15s · 18: +5 in 100, +18s).
 export const ACTS = [
   "Act I — The problem (0:00–0:35)",
   "Act II — The idea (0:35–1:20)",
   "Act III — Why nobody does it (1:20–1:40)",
   "Act IV — The math, from zero (1:40–3:15)",
-  "Act V — The product (3:15–4:05)",
-  "Act VI — The model (4:05–4:30)",
+  "Act V — The product (3:15–4:20)",
+  "Act VI — The model (4:20–5:05)",
 ] as const;
 
 export const VOCABULARY_RULE = {
@@ -42,7 +44,7 @@ export const VOCABULARY_RULE = {
     "notional",
     "underwrite",
   ],
-  why: "Not because the audience is unsophisticated, but because every one of them asks the listener to import a concept before they need it. The deck introduces exactly one object — a coupon (Slide 7) — and that object carries all the way through: on Slide 14 we say “we hold the coupons,” not “we hold the position.” That continuity does most of the from-zero work.",
+  why: "Not because the audience is unsophisticated, but because every one of them asks the listener to import a concept before they need it. The deck introduces exactly one object — a coupon (Slide 7) — and that object carries all the way through: on Slide 15 we say “we hold the coupons,” not “we hold the position.” That continuity does most of the from-zero work.",
   exception:
     "The one concept that cannot be avoided is price equals odds, which is why it gets a slide to itself and an argument a listener can check against their own intuition (Slide 8).",
 };
@@ -55,11 +57,11 @@ export const CUT_ORDER = [
 ];
 
 export const BUILD_NOTES = [
-  "Slides 8 and 17 share one Kalshi poller. Read API, no auth, ~10s interval, last-updated timestamp visible. If the fetch fails, fall back to a frozen snapshot and drop the `live` tag rather than showing a stale number as current.",
-  "Slides 3→4 and 9→10 are builds, not new slides. The objects must persist and animate so the eye tracks continuity.",
-  "One number per slide, except 11 and 16.",
+  "One Kalshi feed serves everything live: the slide-8 price stamp, the console menu and quote (14–15), and the embedded claim ticket (16). Read API, no auth, ~10s interval, last-updated timestamp visible. If the fetch fails, fall back to the frozen snapshot and drop the `live` tag rather than showing a stale number as current.",
+  "Slides 3→4, 9→10 and 14→15 are builds, not new slides. The objects must persist and animate so the eye tracks continuity.",
+  "One number per slide, except 11 and 17.",
   "Type scale: the number is the slide. Headlines are labels at roughly a quarter the size.",
-  "Total narration is ~560 words, which lands at 4:20–4:30 spoken with the pauses held.",
+  "Total narration is ~680 words after the 2026-08-15 additions, which lands around 5:05 spoken with the pauses held. The cut order buys back ~35s if the runtime matters.",
 ];
 
 const MARKET_NOTE =
@@ -110,7 +112,7 @@ export const SLIDES: Slide[] = [
       "The same two cards; a price drops into each. Both read $2,000. Hold three seconds.",
     ],
     narration:
-      "Here's the part that surprised us. Those two cost the same. A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story.",
+      "A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story.",
     notOnScreen: ["The phrase “expected value,” any formula."],
   },
   {
@@ -119,9 +121,9 @@ export const SLIDES: Slide[] = [
     title: "It's the same discount.",
     onScreen: ["The sentence alone, centred."],
     narration:
-      "That's the objection everyone's about to have, so let's not dodge it. And it's exactly the point — nobody has ever repeated a ten-percent-off sale. Somebody repeats this one.",
+      "One order in ten goes free. So across a hundred orders, you've given away ten of them — that's the same ten percent. All that changed is where it lands: everything on one customer, instead of a little on everyone.",
     delivery:
-      "Why it's here: pre-empting the obvious objection is worth more than defending it later, and in a video there is no later. The narration must NOT restate the on-screen sentence — the screen makes the claim, the voice names it as the objection and supplies the differentiator the screen cannot show.",
+      "This slide EARNS the claim on screen; it does not defend it. Explain the arithmetic, never pre-empt an objection — signalling that you expect to be doubted invites the doubt. Frequency (“ten orders out of a hundred”) is far easier to follow aloud than probability, so give the equivalence in counts, not percentages. The closing clause introduces concentration — the real difference between the two promos — as an observation rather than an argument.",
     productionNote:
       "On-screen sentence updated from the plan's “Yes — it's a discount.” to “It's the same discount.” per Victor's review, 2026-08-15. Narration rewritten 2026-08-15 to stop speaking the on-screen words (redundancy effect: narration duplicating visible text measurably hurts comprehension).",
   },
@@ -205,6 +207,21 @@ export const SLIDES: Slide[] = [
   {
     n: 13,
     act: ACTS[4],
+    title: "$75M",
+    onScreen: [
+      "The figure alone, very large. Small label beneath: “what one furniture store sold on one of these.”",
+    ],
+    narration:
+      "Does anyone actually talk about these? At the extreme — a Houston furniture store ran exactly this promise on the World Series and sold seventy-five million dollars of furniture. It made national news twice: when he promised it, and when everyone got paid. Nobody has ever written a headline about ten percent off.",
+    delivery:
+      "Source: Mattress Mack, Gallery Furniture, 2022 World Series — ~$75M in promo-driven sales (Forbes, Nov 2022). Be ready for the follow-up: by his own account the promo itself was roughly a wash on margin — the return was the attention. That is the point, not a weakness: this is the only promotion type with a documented case of making national news.",
+    notOnScreen: ["The source citation, his name, a photo."],
+    productionNote:
+      "Added 2026-08-15 per Victor's direction to quantify the word-of-mouth value. Not in the original 17-slide plan; adds ~15s — the cut order still applies if the runtime matters.",
+  },
+  {
+    n: 14,
+    act: ACTS[4],
     title: "Pick an event.",
     onScreen: [
       "Screen recording of the merchant console — the live market picker, each row priced off its own book, thin books refused inline, then the all-in quote on the selected row.",
@@ -217,7 +234,7 @@ export const SLIDES: Slide[] = [
       "Per Victor's review 2026-08-15: the demo is a MENU of runnable events, not plaintext entry. The console shows the product's real market picker (via /api/markets) — each row priced by walking its live book, thin books refused with the reason (including the 97¢ make-the-playoffs market: “book too thin for this size”) — and the highlight lands on the Yankees–World-Series row. Narration corrected 2026-08-15: the plan's “types the promo in plain English” described a product that was never built, and narrating it over a menu would have been visibly false.",
   },
   {
-    n: 14,
+    n: 15,
     act: ACTS[4],
     title: "They never see a contract.",
     onScreen: [
@@ -229,19 +246,21 @@ export const SLIDES: Slide[] = [
       "Note the word choice: coupons, not position. Slide 7's object is still doing work eight slides later.",
   },
   {
-    n: 15,
+    n: 16,
     act: ACTS[4],
     title: "the customer's phone",
     onScreen: [
       "The claim ticket, mobile, live odds ticking. Then settlement: “The Yankees won. Your order was free.”",
     ],
     narration:
-      "And the customer gets this. Their order, riding on the Yankees, with live odds. And when it hits — the Yankees won, your order was free.",
+      "And the customer gets this. Their order, riding on the Yankees, with live odds. And when it hits — the Yankees won, your order was free. A hundred customers just became a hundred people telling that story.",
+    delivery:
+      "The last sentence is the word-of-mouth payoff — land it after the settlement flip, not over it.",
     productionNote:
-      "The phone embeds the real product page — /claim/1042, then the /claim/1042?settle=won deep-link for the settlement beat — so the deck shows exactly the UI a customer gets.",
+      "The phone embeds the real product page — /claim/1042, then the /claim/1042?settle=won deep-link for the settlement beat — so the deck shows exactly the UI a customer gets. Closing narration sentence added 2026-08-15 per Victor's direction to stress the word-of-mouth value at the customer moment.",
   },
   {
-    n: 16,
+    n: 17,
     act: ACTS[5],
     title: "three lines",
     onScreen: ["Promo budget $2,000 · Exchange fee $126 · Our fee $200 (bold)."],
@@ -250,7 +269,22 @@ export const SLIDES: Slide[] = [
     notOnScreen: ["ARR projections, TAM, a market-size chart."],
   },
   {
-    n: 17,
+    n: 18,
+    act: ACTS[5],
+    title: "+5 in 100",
+    onScreen: [
+      "“+5” very large; beneath it, a row of 100 order dots with the last five filling in. Label: “in 100 orders.”",
+    ],
+    narration:
+      "So here's the bet, made precise. With every fee in, this beats the flat sale it replaces if it sells five more orders in a hundred. That's the whole bar. And you don't take it on faith — every campaign runs with a built-in holdout, half the traffic keeps the plain sale, so your first promo measures its own lift against the discount you would have run anyway.",
+    delivery:
+      "The figure is the required behavioral edge from docs/01-math.md §8: ~3.4% extra units to tie with exchange friction only, ~5% with our 10%-of-premium fee included (docs/05-pitch.md, “What has to be true”). If pressed: nobody has ever measured this properly, which is exactly why the holdout ships on by default — the first campaign answers it with the merchant's own numbers.",
+    notOnScreen: ["The percent sign, the formula, the word “lift.”"],
+    productionNote:
+      "Added 2026-08-15 per Victor's direction to put the lift calculation in the deck. Not in the original 17-slide plan; adds ~18s.",
+  },
+  {
+    n: 19,
     act: ACTS[5],
     title: "closing card",
     onScreen: [

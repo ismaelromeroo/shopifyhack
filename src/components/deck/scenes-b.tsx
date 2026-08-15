@@ -90,7 +90,106 @@ export function SceneSameSale() {
   );
 }
 
-/* ── Slide 16 — three lines ─────────────────────────────────────────── */
+/* ── Slide 13 — $75M — the word-of-mouth proof ───────────────────────────
+   The documented extreme of this mechanic: Mattress Mack's 2022 World
+   Series promo, ~$75M of promo-driven furniture sales. The number is the
+   slide; the source lives in the script, not on screen. */
+export function SceneWom() {
+  const rm = useReducedMotion();
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-[4vmin]">
+      <motion.div
+        initial={
+          rm
+            ? { opacity: 0 }
+            : { opacity: 0, scale: 0.96, filter: "blur(10px)" }
+        }
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ delay: 0.2, duration: 0.85, ease: EASE }}
+        className="tnum text-[18vmin] font-bold leading-none tracking-[-0.03em]"
+      >
+        $75M
+      </motion.div>
+      <motion.div
+        initial={rm ? { opacity: 0 } : { opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6, ease: EASE }}
+        className="text-[2.4vmin] leading-normal text-g600"
+      >
+        what one furniture store sold on one of these
+      </motion.div>
+    </div>
+  );
+}
+
+/* ── Slide 18 — +5 in 100 — the bar, made visible ────────────────────────
+   A hundred order dots ripple in as outlines, wave running left to right;
+   then the figure lands and the five that decide the whole business fill
+   in, one by one, along the bottom-right. */
+export function SceneBar() {
+  const rm = useReducedMotion();
+  const COLS = 20;
+  const ROWS = 5;
+  const EXTRA = 5;
+  const DOTS = COLS * ROWS;
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <motion.div
+        initial={
+          rm ? { opacity: 0 } : { opacity: 0, scale: 0.94, filter: "blur(8px)" }
+        }
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ delay: rm ? 0 : 1.15, duration: 0.6, ease: EASE }}
+        className="tnum text-[15vmin] font-bold leading-none tracking-tight"
+      >
+        +5
+      </motion.div>
+      <div
+        className="mt-[7vmin] grid gap-[1.6vmin]"
+        style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}
+      >
+        {Array.from({ length: DOTS }, (_, i) => {
+          const col = i % COLS;
+          const row = Math.floor(i / COLS);
+          const extra = i >= DOTS - EXTRA;
+          return (
+            <motion.div
+              key={i}
+              initial={rm ? { opacity: 0 } : { opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={
+                extra
+                  ? {
+                      delay: rm ? 0 : 1.35 + (i - (DOTS - EXTRA)) * 0.18,
+                      duration: 0.4,
+                      ease: EASE,
+                    }
+                  : {
+                      delay: rm ? 0 : 0.2 + col * 0.035 + row * 0.05,
+                      duration: 0.45,
+                      ease: EASE,
+                    }
+              }
+              className={`h-[2.1vmin] w-[2.1vmin] rounded-full ${
+                extra ? "bg-ink" : "border-[0.18vmin] border-g300"
+              }`}
+            />
+          );
+        })}
+      </div>
+      <motion.div
+        initial={rm ? { opacity: 0 } : { opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: rm ? 0 : 2.5, duration: 0.6, ease: EASE }}
+        className="mt-[6vmin] text-[2.4vmin] leading-normal text-g500"
+      >
+        in 100 orders
+      </motion.div>
+    </div>
+  );
+}
+
+/* ── Slide 17 — three lines ─────────────────────────────────────────── */
 const LINES: [string, string, boolean][] = [
   ["Promo budget", "$2,000", false],
   ["Exchange fee", "$126", false],

@@ -13,7 +13,7 @@ import { EASE, SlideLabel, useStages } from "./primitives";
 import { useDeckQuote } from "./deck-quote";
 
 /**
- * Slides 13 + 14 — the merchant console, one persistent panel.
+ * Slides 14 + 15 — the merchant console, one persistent panel.
  * The demo interaction is a MENU, not plaintext: a list of real events the
  * promo can ride on, each priced by walking its live book (via the product's
  * own /api/markets). A highlight browses the rows, lands on the Yankees–
@@ -242,11 +242,11 @@ function OrdersChart({ running }: { running: boolean }) {
   );
 }
 
-export function ConsoleScene({ n }: { n: 13 | 14 }) {
+export function ConsoleScene({ n }: { n: 14 | 15 }) {
   const q = useDeckQuote();
   const rm = useReducedMotion();
-  // On 13 the console assembles itself; entering 14 directly shows it built.
-  const [startedOn13] = useState(n === 13);
+  // On 14 the console assembles itself; entering 15 directly shows it built.
+  const [startedOn14] = useState(n === 14);
 
   // the product's own menu data, priced against the 100 × $200 campaign
   const [menu, setMenu] = useState<MenuRow[] | null>(null);
@@ -272,16 +272,16 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
   // stages: 1–4 browse the menu, 5 select, 6 market, 7 book, 8 quote
   const stage =
     useStages(
-      startedOn13 ? [1200, 1650, 2100, 2550, 3150, 3900, 4500, 5500] : [],
-      startedOn13
-    ) + (startedOn13 ? 0 : 8);
+      startedOn14 ? [1200, 1650, 2100, 2550, 3150, 3900, 4500, 5500] : [],
+      startedOn14
+    ) + (startedOn14 ? 0 : 8);
   const browseOrder = [1, 2, 3, 0];
   const highlightIdx =
     stage >= 1 && stage <= 4
       ? Math.min(browseOrder[stage - 1], rows.length - 1)
       : -1;
   const selected = stage >= 5;
-  const go = n === 14;
+  const go = n === 15;
 
   const quote = q.payload?.quote ?? null;
   const premium = quote?.premiumCents ?? RUNNING_EXAMPLE.premiumCents;
@@ -328,7 +328,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
                     key={row.ticker}
                     layout
                     initial={
-                      startedOn13 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
+                      startedOn14 && !rm ? { opacity: 0, y: 6 } : { opacity: 1, y: 0 }
                     }
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, transition: { duration: 0.25 } }}
@@ -417,7 +417,7 @@ export function ConsoleScene({ n }: { n: 13 | 14 }) {
         </motion.div>
       </div>
       <SlideLabel>
-        {n === 13 ? "Pick an event." : "They never see a contract."}
+        {n === 14 ? "Pick an event." : "They never see a contract."}
       </SlideLabel>
     </div>
   );

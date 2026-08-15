@@ -35,7 +35,7 @@ export default function ScriptPage() {
           The script
         </h1>
         <p className="mt-4">
-          17 slides, ~4:30, screen-recorded from the web deck. Narration
+          19 slides, ~5:05, screen-recorded from the web deck. Narration
           carries the argument; the screen carries one idea at a time.{" "}
           <strong className="font-semibold text-ink">
             If a slide needs a sentence, the sentence goes in the narration.

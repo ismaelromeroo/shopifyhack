@@ -54,14 +54,13 @@ and an argument a listener can check against their own intuition (Slide 8).
 
 ### Slide 4 — `$2,000` / `$2,000`  *(build on Slide 3)*
 - **On screen:** the same two cards; a price drops into each. Both read **$2,000**. Hold three seconds.
-- **Narration:** *"Here's the part that surprised us. Those two cost the same. A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story."*
+- **Narration:** *"A hundred orders, two hundred dollars each. Ten percent off is two thousand dollars. And a one-in-ten chance of giving an order away — also two thousand. Same money. Completely different story."*
 - **Not on screen:** the phrase "expected value," any formula.
 
 ### Slide 5 — `It's the same discount.`
 - **On screen:** the sentence alone, centred.
-- **Narration:** *"That's the objection everyone's about to have, so let's not dodge it. And it's exactly the point — nobody has ever repeated a ten-percent-off sale. Somebody repeats this one."*
-- **Why it's here:** pre-empting the obvious objection is worth more than defending it later, and in a video there is no later.
-- **Delivery:** the narration must **not restate the sentence on screen.** The screen makes the claim; the voice names it as *the objection* and supplies the differentiator the screen can't show. Narration that duplicates visible text measurably hurts comprehension rather than reinforcing it.
+- **Narration:** *"One order in ten goes free. So across a hundred orders, you've given away ten of them — that's the same ten percent. All that changed is where it lands: everything on one customer, instead of a little on everyone."*
+- **Delivery:** this slide **earns** the claim on screen; it does not defend it. Explain the arithmetic and never pre-empt an objection — signalling that you expect to be doubted invites the doubt. Give the equivalence in **counts, not percentages** ("ten orders out of a hundred" is far easier to follow aloud than "a 10% chance"). The closing clause introduces *concentration* — the real difference between the two promos — as an observation rather than an argument.
 
 ---
 

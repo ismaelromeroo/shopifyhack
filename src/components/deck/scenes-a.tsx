@@ -34,6 +34,14 @@ export function SceneStore() {
             boxShadow: "var(--shadow-raised)",
           }}
         >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
+            className="mb-[2.2vmin] text-center text-[1.6vmin] font-semibold uppercase tracking-[0.22em] text-g600"
+          >
+            Covered
+          </motion.div>
           <h1 className="text-center text-[5.5vmin] font-semibold leading-[1.1] tracking-tight">
             Every store is running a sale.
           </h1>
