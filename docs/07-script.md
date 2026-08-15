@@ -1,0 +1,201 @@
+# 07 — Narration Script
+
+**Date:** 2026-08-15
+**Runtime:** ~4:30 · ~560 words
+**Source of truth for slide content:** [`06-slide-plan.md`](06-slide-plan.md). If the two ever
+disagree, the plan wins and this file gets regenerated from it.
+
+*Formatted for reading aloud. Line breaks are breath points, not sentence ends. Timings are cumulative
+and approximate — they assume the pauses are actually held.*
+
+---
+
+### 1 · `Every store is running a sale.` — 0:00
+
+> Every store you walk past
+> is running a sale right now.
+
+---
+
+### 2 · `Most of it is wasted.` — 0:10
+
+> And most of that money does nothing.
+> The people taking the discount were mostly going to buy anyway —
+> so you've handed margin to customers you already had.
+>
+> And nobody, ever, has told a friend about ten percent off.
+
+---
+
+### 3 · `Same money. Different shape.` — 0:35
+
+> So what if the same money bought something people actually talked about?
+>
+> Instead of ten percent off for everyone —
+> a one-in-ten chance your whole order is free.
+
+---
+
+### 4 · `$2,000 / $2,000` — 0:50
+
+> Here's the part that surprised us.
+> Those two cost the same.
+>
+> A hundred orders, two hundred dollars each.
+> Ten percent off is two thousand dollars.
+> And a one-in-ten chance of giving an order away — also two thousand.
+>
+> Same money. Completely different story.
+
+**Hold three seconds on the two prices before speaking.**
+
+---
+
+### 5 · `Yes — it's a discount.` — 1:10
+
+> So yes, this is a discount.
+> That's the point.
+>
+> It costs what your sale costs.
+> The difference is that people talk about this one.
+
+---
+
+### 6 · `$0 or $20,000` — 1:20
+
+> So why doesn't anyone do it?
+>
+> Because if it hits, you owe every customer at once.
+> That promise costs you nothing — or twenty thousand dollars.
+>
+> That's not a marketing decision.
+> That's a bet you can't afford to lose.
+> And no ordinary store signs it.
+
+---
+
+### 7 · `A coupon worth $1 if the Yankees make the playoffs.` — 1:40
+
+> Which is where this gets interesting.
+>
+> Picture a coupon.
+> It pays you one dollar if the Yankees make the playoffs,
+> and nothing if they don't.
+>
+> What should that coupon cost?
+
+---
+
+### 8 · `10¢` *(live)* — 1:55
+
+> Exactly the odds.
+>
+> If the Yankees are a one-in-ten shot, it's worth ten cents.
+> Any cheaper and you'd buy every one you could find.
+> Any more and you'd sell them.
+>
+> And this isn't hypothetical —
+> that's a real market, and that's the real price, right now.
+
+**The only conceptual leap in the deck. Slow down. Let the live price sit on screen while you say it.**
+
+---
+
+### 9 · `20,000 coupons = $2,000` — 2:15
+
+> So two thousand dollars buys you twenty thousand of those coupons.
+>
+> Which means twenty thousand dollars shows up —
+> but only if the Yankees make it.
+
+---
+
+### 10 · `That's exactly when you owe $20,000.` — 2:30
+
+> And that is exactly when you owe your customers twenty thousand dollars.
+>
+> The money arrives at the same moment the bill does.
+
+**The load-bearing sentence of the whole deck. Make it the slowest line in the recording.**
+
+---
+
+### 11 · the payoff table — 2:50
+
+> *(three full seconds of silence)*
+>
+> Either way: twenty-one twenty-six.
+> Win or lose, the same number.
+>
+> The uncertainty is just gone.
+
+**The silence is functional. The table resolves faster than narration can describe it.**
+
+---
+
+### 12 · `$2,000 → $2,126` — 3:05
+
+> Against the two-thousand-dollar sale he was already running.
+
+---
+
+### 13 · `Type it in English.` — 3:15
+
+> So here's what we built.
+>
+> The merchant types the promo in plain English.
+> We find the market, check it's deep enough to actually cover them,
+> and quote one number before they commit.
+
+---
+
+### 14 · `They never see a contract.` — 3:35
+
+> They click go.
+>
+> They never open an account, never place a trade, never see a contract.
+> We hold the coupons, and we pay the refunds.
+
+---
+
+### 15 · the customer's phone — 3:50
+
+> And the customer gets this.
+> Their order, riding on the Yankees, with live odds.
+>
+> And when it hits —
+> *the Yankees won, your order was free.*
+
+---
+
+### 16 · three lines — 4:05
+
+> We make money the way the exchange does:
+> a management fee on the coverage.
+>
+> Ten percent of the promo budget they were already spending.
+
+---
+
+### 17 · closing card — 4:20
+
+> **[Name].**
+> Turn your discount into something worth talking about.
+
+**Then stop talking.**
+
+---
+
+## Recording notes
+
+- **Record the visuals silent first, then voice over them.** Narrating live while clicking produces
+  dead air and fumbling; separating the two is the single largest quality gain available for no extra
+  work.
+- **The words that never appear** — *hedge, prediction market, contract, position, expected value,
+  variance* — are absent on purpose. One object is introduced (the coupon, slide 7) and it carries
+  through to slide 14's *"we hold the coupons."* If a re-record drifts back into finance vocabulary,
+  the from-zero property is lost.
+- **Three pauses are written into the script and all three are load-bearing:** slide 4 before speaking,
+  slide 10's slowed delivery, slide 11's three seconds of silence.
+- If it runs long, cut slide 5 and fold *"yes, this is a discount"* onto the end of slide 4. Saves
+  ~15 seconds and costs the least.
