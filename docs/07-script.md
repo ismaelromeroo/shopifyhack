@@ -4,9 +4,8 @@
 `slides.ts` (and `06-slide-plan.md`) and re-generate, or the script and the screen drift apart. That
 has happened three times.
 
-*Formatted for reading aloud. Line breaks fall at sentence boundaries as breath points. Timings are in
-the act headers; total is ~5:05 with the pauses held, against a 5:00 ceiling — see the cut order in
-`06-slide-plan.md`.*
+*Formatted for reading aloud. Line breaks fall at sentence boundaries as breath points. Total is ~5:05
+with the pauses held, against a 5:00 ceiling — see the cut order in `06-slide-plan.md`.*
 
 ---
 
@@ -123,7 +122,9 @@ Everything before it is setup; everything after it is bookkeeping.**
 
 > (three full seconds of silence) — then: “Either way: twenty-three twenty-six.
 > Win or lose, the same number.
-> The uncertainty is just gone.”
+> The uncertainty is just gone.” — then, once the table has landed: “That is all hedging is.
+> You are not betting on the Yankees.
+> You are buying certainty about what this promotion costs.”
 
 **The silence is not a stylistic flourish. The table resolves itself faster than narration can
 describe it, and talking over it competes with the only slide where reading is the point.**
@@ -224,9 +225,10 @@ holdout ships on by default — the first campaign answers it with the merchant'
 
 - **Record the visuals silent first, then voice over them.** Narrating live while clicking produces
   dead air and fumbling; separating the two is the largest quality gain available for no extra work.
-- **The instrument is called a contract**, plainly. The banned words are the jargon *around* it —
-  *hedge, prediction market, position, expected value, variance, notional, underwrite*. If a re-record
-  drifts back into those, the from-zero property is lost.
+- **Use the real words, in the right order.** The rule is sequencing, not vocabulary: *contract* is
+  earned at slide 7, *odds* at 8, *hedging* and *prediction market* at 11 — after the payoff table has
+  shown both branches costing the same. Said in that order the jargon is a service; said early it is a
+  tax. Only *expected value* stays out, because slide 5 already gives the same idea in counts.
 - **Explain, never pre-empt.** No "here's the part that surprised us", no "that's the objection
   everyone will have", no "this isn't hypothetical". Signalling that you expect to be doubted invites
   the doubt; the numbers and the live price do that work unaided.

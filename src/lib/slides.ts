@@ -72,8 +72,8 @@ export const SLIDES: Slide[] = [
     act: ACTS[0],
     title: "Every store is running a sale.",
     onScreen: [
-      "Full-bleed photo of a storefront sale sign, or a discount-code row in a commerce admin.",
-      "Headline bottom-left, small.",
+      "Full-bleed monochrome photo — Manhattan skyline — behind a frosted-glass pane.",
+      "The headline centred on the pane. This is the one slide where the headline is the hero object, not a corner label.",
     ],
     narration: "Every store you walk past is running a sale right now.",
     notOnScreen: ["Our name, our logo, any product."],
