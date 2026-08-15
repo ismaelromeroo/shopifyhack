@@ -7,8 +7,8 @@ import { EASE, SlideLabel } from "./primitives";
 /* ── Slide 1 — Every store is running a sale. ────────────────────────────
    Frosted glass over a monochrome landscape: the headline sits alone on a
    glass pane; the greyscale sea-of-fog behind is mood, not information.
-   Photo: karst peaks over a sea of clouds, Vang Vieng, Laos (Wikimedia
-   Commons, CC BY-SA) — public/backdrop.jpg, graded to greyscale here. */
+   Photo: Manhattan skyline — public/backdrop.jpg, graded to greyscale here. */
+
 export function SceneStore() {
   const rm = useReducedMotion();
   return (
@@ -18,7 +18,7 @@ export function SceneStore() {
         src="/backdrop.jpg"
         alt=""
         className="absolute inset-0 h-full w-full object-cover grayscale"
-        style={{ objectPosition: "50% 35%" }}
+        style={{ objectPosition: "50% 42%" }}
       />
       <div className="absolute inset-0 bg-paper/20" />
       <div className="absolute inset-0 flex items-center justify-center">
