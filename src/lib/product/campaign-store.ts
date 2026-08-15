@@ -28,13 +28,14 @@ function id() {
 export function createCampaign(
   input: Omit<Campaign, "id" | "status" | "liabilityCents" | "coverageCents" | "orderCount" | "outcome" | "createdAt">
 ): Campaign {
+  const liabilityCents = input.ordersTarget * input.aovCents;
   const c: Campaign = {
     ...input,
     id: id(),
     status: "live",
-    liabilityCents: 0,
-    coverageCents: 0,
-    orderCount: 0,
+    liabilityCents,
+    coverageCents: liabilityCents,
+    orderCount: input.ordersTarget,
     outcome: "pending",
     createdAt: new Date().toISOString(),
   };
@@ -46,14 +47,14 @@ export function getCampaign(cid: string): Campaign | undefined {
   return campaigns.get(cid);
 }
 
-/** Simulated orders: add `n` AOVs of liability and cover them. */
-export function tickCampaign(cid: string, n = 1): Campaign | { error: string } {
+/** Simulated orders: fill remaining (or `n` of them). Default is the rest. */
+export function tickCampaign(cid: string, n?: number): Campaign | { error: string } {
   const c = campaigns.get(cid);
   if (!c) return { error: "not_found" };
   if (c.status !== "live") return { error: "settled" };
   if (c.orderCount >= c.ordersTarget) return { error: "complete" };
   const left = c.ordersTarget - c.orderCount;
-  const steps = Math.min(Math.max(1, n), left);
+  const steps = Math.min(Math.max(1, n ?? left), left);
   for (let i = 0; i < steps; i++) {
     c.orderCount += 1;
     c.liabilityCents += c.aovCents;
